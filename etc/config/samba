@@ -1,0 +1,16 @@
+
+config samba
+	option name 'gaspacho'
+	option workgroup 'REDGASPACHO'
+	option description 'smart router'
+	option homes '1'
+
+config sambashare
+	option name 'Descargas'
+	option path '/root/Descargas'
+	option read_only 'no'
+	option guest_ok 'yes'
+	option create_mask '0755'
+	option dir_mask '0755'
+	option users 'root'
+

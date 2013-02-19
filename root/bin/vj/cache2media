@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+#	Genera listas en json y text de los archivos multimedia en la cache
+#	Nota: hay que borrar ',]' al final del array
+#
+
+# --------- varibles de entorno ------------
+
+# 2048
+video="mp4 ogg ogv webm avi mpeg mpg mpeg4"
+# 1024
+musica="mp3 ogg oga"
+# 96
+imagen="png jpg jpeg"
+# 30
+texto="pdf txt text epub doc docx"
+
+# --------- Generador de varibles ------------
+
+TAMANIO="96"
+EXTENSION="mp4\|ogg\|ogv\|webm\|avi\|jpg\|png\|pdf\|epub"
+
+# --------- Generador de json ------------
+
+{
+# abre el json
+echo "callback({["
+
+# verifica que el archivo sea lo suficientemente grande
+find /root/Cache/ -size +$TAMANIO -exec \
+grep "X-Polipo-Location: .*\.\($EXTENSION\)" {} \; \
+| sed 's/X-Polipo-Location:\ //' \
+| while read ARCHIVO ;do
+	echo "\'$ARCHIVO\',"
+done 
+
+# cierra el json
+echo "]});"
+} | xargs | sed "s/\ '/'/g; s/,\ ]/]/"

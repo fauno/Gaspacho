@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+#	escanea la red y va guardando el log en un archivo para intentar detectar la posicion 
+#	y codificacion del los routers
+#
+#	pepe: algo largo	-> pepe: 'algo largo',	y { ... }, 
+
+iw wlan0 scan \
+| grep "\(SSID\|UUID\|Authentication\|freq:\|signal:\)" \
+| xargs \
+| sed 's/fre/\nfre/g' \
+| sed 's/*//g'

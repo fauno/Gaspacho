@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+#	redireccion de polipo
+
+while read URL; do
+
+	# Archivo interno de polipo
+	if [ $(echo $URL | grep "^/") ]; then
+		echo 
+		exit
+	fi
+
+	# Log
+	echo $URL >> /var/log/visitas 2> /dev/null
+
+	# ----------- Redirecccionamientos multimedia ---------
+
+	# Redireccionar hacia transmision
+	if [ $(echo $URL | grep '\(\.torrent\(?.*\|$\)\|magnet://\)') ]; then
+		URL="http://Transmission/?url=$URL"
+	fi
+	# Reproductor de multimedia
+	if [ $(echo $URL | grep '\.\(ogv\|ogg\|m\(p\|v\)4\|flv\|mp3\|wav\|jpg\|png\)\(?.*\|$\)') ]; then
+		URL="http://Reproductor/?url=$URL"
+	fi
+	# Lector de libros
+	if [ $(echo $URL | grep '\.\(pdf\|epub\|txt\)\(\?\|$\)') ]; then
+		URL="http://Lector/?url=$URL"
+	fi
+done
+
+exit
+	1) MicroLog para polipo
+	2) Redireccionamiento:
+		- Si comienza con http://
+		- Si es un falso refresh (ejemplo: url=http:// )
+		- Si comienza con magnet://
+		- Si termina en .torrent (?)
+		- Si termina en .ogg, .ogv, .mp4, .flv (lo visualiza con HTML5 o Kaltura)
+		- Si termina en .pdf, .epub (?)
+	3) Si una contiene `ads` se la marca para revisar :P

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Mobile Torrent Search</title> 
+		<!-- 		-->
+	
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+
+	        <link rel="stylesheet" type="text/css" href="assets/css/site.css" />
+	        <link rel="stylesheet" type="text/css" href="assets/css/prettify.css" />
+	        <link rel="stylesheet" type="text/css" href="css/gaspacho.css" />
+		<script src="js/jquery-1.7.1.js"></script>
+		<script src="js/jquery.mobile-1.0.js"></script>
+		<script src="js/BusquedaArchiveOrg.js"></script>
+	</head>
+	<body>
+		<form id="target" action="/" method="get">
+			<input type="text" name="search" class="span2" id="searchField" placeholder="Buscar" value="" />
+			<input type="radio" name="sortBy" id="radio-choice-1" value="seeds" checked="checked" />
+			<label for="radio-choice-1">Pared</label>
+			<input type="radio" name="sortBy" id="radio-choice-2" value="age"  />
+			<label for="radio-choice-2">Antiguedad</label>
+			<input type="radio" name="sortBy" id="radio-choice-3" value="size"  />
+			<label for="radio-choice-3">Tamaño</label>
+			<button class="btn" id="searchButton">Buscar</button>
+		</form>
+		<ul id="list"></ul>
+		<script src="js/isohunt.js"></script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+#	buscar archivos y los cataloga por imagen, texto, sonido y video
+#
+
+DESCARGAS="/root/Descargas/"
+RAIZ="\/root\/"
+
+echo "callback([" > /tmp/Mediateca.js
+find $DESCARGAS -type f | grep -v "\.torrent$" | sed 's/\/root\///g; s/^\(.*\)$/"\1",/g' >> /tmp/Mediateca.js
+echo '""]);' >> /tmp/Mediateca.js
+
+# hay algun cambio?
+if [ "$(cat /tmp/Mediateca.js)" == "$(cat /www/estaticas/Mediateca.js)" ]; then
+	exit
+fi 
+
+# genero json
+echo $(cat /tmp/Mediateca.js) > /www/estaticas/Mediateca.js

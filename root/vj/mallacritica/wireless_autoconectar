@@ -1,0 +1,72 @@
+#!/bin/sh
+#
+#	intenta conectar a una red abierta
+#
+
+MESSAGE="/sys/class/leds/tp-link\:blue\:system/message"
+LED="/sys/class/leds/tp-link:blue:system/brightness"
+PING="208.80.152.201"	#wikipedia
+
+#------------------------------------------------
+
+mkdir -p /root/planillas/config/
+
+if [ ! -f /root/planillas/config/wireless ]; then
+	echo "No tengo la configuraciones"
+	exit
+fi
+if [ ! -f /root/planillas/defecto/wireless ]; then
+	echo "Creando la configuracion por defecto"
+	cp /etc/config/wireless /root/planillas/defecto/wireless
+fi
+
+#------------------------------------------------
+
+echo "0" > $LED
+
+if [ ! "$(ping -W 1 -c 1 $PING 2>&1| grep unreachable)" ]; then
+	echo "1" > $LED
+	echo "estoy conectado"
+	exit
+fi
+
+# backup del wifi
+
+# --------- buscador de redes abiertas ----------
+
+iw wlan0 scan \
+| grep "\(SSID\|Authentication\|signal:\)" \
+| xargs \
+| sed 's/signal:\ /\n/g; s/*//g; s/dBm//g; s/SSID://g;' \
+| sort -u \
+| grep -v ^$ \
+| grep -v Authentication \
+| sed 's/Authentication.*://g' \
+| while read AP; do
+
+	echo "1" > $LED
+	
+	# SSID
+	SSID=$(echo $AP | cut -d " " -f 2-4)
+	echo "conectando a $SSID"
+
+	# crea el configuración para el wifi encontrado
+	cat /root/planillas/config/wireless \
+	| sed "s/\$SSID/$SSID/g" > /etc/config/wireless
+
+	echo "conectando" > $MESSAGE
+	/etc/init.d/network restart 2> /dev/null > /dev/null
+	sleep 3
+	if [ ! "$(ping -W 1 -c 1 $PING 2>&1| grep unreachable)" ]; then
+		echo "1" > $LED
+		echo "¡se conecto!"
+		echo "conecte a $SSID" > /var/log/wireless_autoconectar
+		exit
+	fi
+done
+
+#------------------------------------------------
+
+echo "0" > $LED
+cp /root/planillas/defecto/wireless /etc/config/wireless
+/etc/init.d/network restart

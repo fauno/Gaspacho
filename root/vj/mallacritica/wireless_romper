@@ -1,0 +1,2 @@
+#!/bin/sh
+aircrack mon0 --encrypt wpe

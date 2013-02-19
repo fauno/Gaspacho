@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+#	intenta conectar a una red abierta
+#
+
+iw wlan0 scan \
+| grep "\(SSID\|Authentication\|signal:\)" \
+| xargs \
+| sed 's/signal:\ /\n/g; s/*//g; s/dBm//g; s/SSID:/\|/g;' \
+| grep -v ^$ \
+| sort -u \
+| sed 's/Authentication\ suites:/\|/g'
+
+exit
+
+# se fija si existe una carpeta con su SSID
+# copia la configuracion en /etc/config/wireless

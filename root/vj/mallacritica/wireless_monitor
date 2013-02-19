@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+#	pone el wifi en modo monitor
+#
+
+airmon-ng start wlan0
+airodump-ng mon0 --encrypt wep -w capture -c 6

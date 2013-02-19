@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+        <meta charset="utf-8" />
+        <title>Gaspacho</title>
+        <meta name="description" content="Multimedia, video y audio" />
+        <meta name="author" content="Ernesto Bazzano (c) HackLab de Barracas" />
+	<!-- bootstrap --->
+        <link rel="stylesheet" type="text/css" href="assets/css/site.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/prettify.css" />
+	<!-- /bootstrap -->
+        <link rel="stylesheet" type="text/css" href="css/Gaspacho.css" />
+        <link rel="stylesheet" type="text/css" href="css/nice_alert.css" />
+        <link rel="stylesheet" href="js/fancybox/source/jquery.fancybox.css?v=2.1.0" type="text/css" />
+	<link rel="shortcut icon" href="img/mascota_16.png">
+        <script src="js/jquery-1.7.1.js" type="text/javascript"></script>
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap-alert.js"></script>
+	<!--
+	<script src="js/jquery.mobile-1.0.js"></script>
+	<script src="js/archive.org.js"></script>
+	<script src="js/icecast.js"></script>
+	--> 
+	<script src="js/Gaspacho.js" type="text/javascript"></script>
+	<script src="js/nice_alert.js" type="text/javascript"></script>
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<![endif]-->
+
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+
+<div class="navbar navbar-fixed-top">  <div class="navbar-inner">
+    <div class="container">
+      <h3><a class="brand" href="#Novedades"><!-- <i class="icon-cloud"></i>
+--> <img src="img/mascota_24.png"> Gaspacho</a></h3>
+      <ul class="nav">
+		<li><a href="#Novedades">Novedades</a></li>
+		<li><a href="#BuscarWeb">Buscar</a></li>
+		<li><a href="#MediatecaTodos">Multimedia</a></li>
+		<li><a href="#Transferencias">Transferencias</a></li>
+      </ul>	
+      <ul class="nav pull-right">
+        <li>
+		<span id="buscar1">
+			<script>
+				$("#buscar1").load('piezas.html #busqueda');
+			</script>
+		</span>
+	</li>
+		<li><a href="/cgi-bin/luci">Administración  <i class="icon-cogs"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--end index header menu -->
+<!--mount point stats-->
+
+
+<div class="container" >
+
+
+	<!-- contenido -->
+	<div id="contenido">
+	<div id="Novedades" class="categoria" >
+
+	<!--for navigation-->
+	<div id="overview"></div>
+
+        <div class="hero-unit">
+	    <img src="img/mascota_320.png" class="pull-right" />
+            <h1><img src="img/fuente_320.png" alt="Novedades" /></h1>
+
+<h2>Novedades</h2>
+      <!-- Example row of columns -->
+      <ul class="span5">
+        <li>
+	Tus ultimás busquedas fueón...
+        </li>
+        <li>
+	Hay un nuevo video para ver
+       </li>
+        <li>
+	Trasnferencias: Llevamos descargados más de 10
+        </li>
+      </ul>
+	    <div class="clearfix"></div>
+        </div>
+		</div>
+		<!-- metodo de mierda para el menu -->
+		<div id="BuscarWeb" >
+		<div id="BuscarImagenes" >
+		<div id="BuscarVideos" >
+		<div id="BuscarAudios" >
+		<div id="BuscarDocumentos" >
+		<div id="BuscarMapas" >
+		<div id="BuscarOpiniones" >
+		<!-- /metodo de mierda para el menu -->
+		<div class="categoria row" >
+			<!--for navigation-->
+			<div id="overview"></div>
+			<div class="span3">
+				<ul class="nav nav-tabs nav-stacked">
+			    		<li><a href="#BuscarWeb"><i class="icon-chevron-right"></i> Web</a></li>
+			    		<li><a href="#BuscarImagenes"><i class="icon-chevron-right"></i> Imágenes</a></li>
+			    		<li><a href="#BuscarVideos"><i class="icon-chevron-right"></i> Videos</a></li>
+			    		<li><a href="#BuscarAudios"><i class="icon-chevron-right"></i> Audios</a></li>
+			    		<li><a href="#BuscarDocumentos"><i class="icon-chevron-right"></i> Documentos</a></li>
+			    		<li><a href="#BuscarMapas"><i class="icon-chevron-right"></i> Mapas</a></li>
+			    		<li><a href="#BuscarOpiniones"><i class="icon-chevron-right"></i> Opiniones</a></li>
+					<!--
+			    		<li><a href="#BuscarNoticias"><i class="icon-chevron-right"></i> Noticias</a> <span class="divider"></span></li>
+			    		<li><a href="#BuscarRobots"><i class="icon-chevron-right"></i> Robots</a> <span class="divider"></span></li>
+					-->
+				</ul>
+			</div>
+			<div class="span9">
+				<h1>Buscar</h1>
+				<div class="row">
+					<div class="span3 pull-right">
+						<form>
+							<div class="input-append">
+								<!-- capturar el submit -->
+								<input type="text" name="q" id="q" class="span2" placeholder="Buscar" />
+								<button class="btn btn-success" type="submit" >Buscar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div id="ContenidoBuscar">
+				<div class="progress progress-striped active">
+ 				  	<div class="bar" style="width: 40%;"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span3 pull-right">
+						<form>
+							<div class="input-append">
+								<input type="text" name="q" id="q" class="span2" placeholder="Buscar" />
+								<button class="btn btn-success" type="submit" >Buscar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		<!-- metodo de mierda para el menu -->
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div id="MediatecaTodos" >
+		<div id="MediatecaImagenes" >
+		<div id="MediatecaVideos" >
+		<div id="MediatecaAudios" >
+		<div id="MediatecaDocumentos" >
+		<div id="MediatecaHistorial" >
+		<div id="MediatecaOtros" >
+		<!-- /metodo de mierda para el menu -->
+		<div class="categoria row" >
+			<!--for navigation-->
+			<div id="overview"></div>
+			<div class="span3">
+				<ul class="nav nav-tabs nav-stacked">
+			    		<li><a href="#MediatecaTodos"><i class="icon-chevron-right"></i> Todos</a> 
+			    		<li><a href="#MediatecaImagenes"><i class="icon-chevron-right"></i> Imágenes</a>
+			    		<li><a href="#MediatecaVideos"><i class="icon-chevron-right"></i> Videos</a>  
+			    		<li><a href="#MediatecaAudios"><i class="icon-chevron-right"></i> Audios</a> 
+			    		<li><a href="#MediatecaDocumentos"><i class="icon-chevron-right"></i> Documentos</a> 
+			    		<li><a href="#MediatecaHistorial"><i class="icon-chevron-right"></i> Historial</a>
+			    		<li><a href="#MediatecaOtros"><i class="icon-chevron-right"></i> Otros</a>
+				</ul>
+			</div>
+			<div class="span9">
+				<h1>Multimedia</h1>
+					<div class="row">
+						<div class="span4 pull-right">
+							<form enctype="multipart/form-data" action="subir.sh" target="IframeOculto" method="POST" >
+								<!-- falta hacer que cuando suba se refresque la mediateca -->
+								<div class="input-append">
+									<input name='fileis' type='file' class="span3" placeholder="Archivo" \>
+									<button class="btn btn-success" type="submit" >Compartir</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div id="ContenidoMediateca">
+						<div class="progress progress-striped active">
+						   	<div class="bar" style="width: 40%;"></div>
+						</div>
+					</div>
+			</div>
+			<div class="span12">
+				<div class="well">
+					<a>UPnP / DLNA</a> y <a>HTTP</a>
+					comparten, dentro la red orgareña, la <b>Mediateca</b> con en tus dispositivos electrónicos, consola de juegos,  como televisión, conectada a la red, otras computadoras y telefonos inteligente.
+					<br />
+				</div>
+			</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div id="Transferencias" class="categoria" >
+			<!--for navigation-->
+			<div id="overview"></div>
+			<h1>Transferencias</h1>
+			<div id="ContenidoTransferencias">
+				<div class="progress progress-striped active">
+				   	<div class="bar" style="width: 40%;"></div>
+				</div>
+			</div>
+			<br />
+			<div class="well">
+				<h2>Torrent</h2>
+				Es un sistema <a>P2P</a>; o sea un sistema de par a par, todos los usuarios se comparten información sin intermediario ys compartir información de todo tipo
+				Podes usarlo para descargar peliculas, imagenes, textos o compartir información con el mundo.
+				<br />
+			</div>
+		</div>
+		<div id="Administracion" class="categoria" >
+			<!--for navigation-->
+			<div id="overview"></div>
+			<h1>Administración</h1>
+			<h2>Historial de navegación </h2>
+			<div class="row">
+				<div class="span5">
+					<br />
+					<form method=POST action="http://proxy/polipo/status?" target="IframeOculto" >
+						<!-- <input type=submit name="init-forbidden" value="Leer lista de bloquedos"> -->
+							<button type="submit" name="writeout-objects" class="btn btn-warning span3">Liberar memoria temporal</button>
+							<br />
+							<br />
+							<button type="submit" name="discard-objects" class="btn btn-danger span3">¡Borrar historial!</button>
+							<br />
+							<br />
+							<button type="submit" name="free-chunk-arenas" class="btn span3">Liberar Arenas Chunk?</button>
+						<!-- <input type=submit name="reopen-log" value="Reopen log file"> -->
+				</form>
+				</div>
+				<div class="span6 well">
+					<p><b>Gaspacho</b> usa tu historial de navegación para mejor tus búsquedas en base a <b>tus gustos</b>, acceder más rápido a las paginas <b>favoritas</b>, eliminar publicidades y paginas molestas, mejorar la <b>velocidad</b> de navegación y no necesitar "tanto" del uso de internet</p>
+					<p>Excepto que sea muy necesario <b>no elimine</b> el historial</p>
+				</div>
+			</div>
+			<hr />
+			<h2>Paginas Bloqueadas</h2>
+			<div class="row">
+				<div class="span5">
+					<h4>Compartiendo 5 Archivos</h4>
+					<!-- entraer estos datos de ushare http://192.168.1.1:49152/web/ushare.html -->
+				</div>
+				<div class="span6 well">
+				</div>
+			</div>
+			<hr />
+
+			<div class="row">
+
+				<div class="span3">
+					<p>TinyProxy</p>
+					<p>Polipo</p>
+				</div>			
+				<div class="span3">
+					<p>Seeks</p>
+				</div>			
+				<div class="span3">
+					<p>Transmission</p>
+				</div>			
+				<div class="span3">
+					<p>Icecast</p>
+					<p>Ushare</p>
+				</div>			
+			</div>			
+			
+			<!--
+			<div class="form-actions">
+				 <button type="submit" class="btn btn-primary">Guardar</button>
+				 <button type="button" class="btn">Cancelar</button>
+	    		</div>
+			-->
+		</div>
+	</div>
+	<!-- /contenido -->
+
+<footer>
+        <div class="row">
+                <div class="span8">
+                        <h3>Gaspacho</h3>
+                        <p>
+			Acelera tu navegación, mejora y ordena tus descargas, organiza tu videos y audios en la web.
+                        </p>
+                </div>
+                <div class="span4">
+                        <h3>Versión</h3>
+                           <ul class="icons">
+                                <li><i class="icon-info-sign"></i>Info</li>
+                                <li><i class="icon-globe" ></i>Donde estas?</li>
+                                <li><i class="icon-envelope"></i> Contacto</li>
+                           </ul>
+                </div>
+
+        </div>
+</footer>
+</div>
+</div>
+<iframe src="" id="IframeOculto" name="IframeOculto" style="display: none;" ></iframe>
+</body>
+</html>

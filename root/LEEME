@@ -1,0 +1,91 @@
+Gaspacho
+========
+
+Servicios
+---------
+
+	0) interfaces web
+		- luci en administracion (X)
+		- nombres estaticos
+			- transmission	(X)
+			- buscador (seeks) / opensearch
+			-
+		- json 
+		- chat permanente
+		- ajax en lugar de google-analytics
+
+	1) cgi no que exploten
+		- upload
+		- buscador (feed 2 json) (1/2)
+		- 
+
+	2) traducciones, estilos
+		- mejorar traduccion de luci
+		- mejorar bootstrap de luci
+
+	3) reproductor
+		- ftp (x)
+		- samba (x)
+
+
+path:
+-----
+
+	/root/bin		programas
+	/root/Descargas		carpeta de descargas y compartidos
+	/root/Torrent		preferencias de torrent
+
+	/www/Descargas		Enlaces a /root/Descargas
+	/www/estaticas		Salidas de los crontabs
+
+
+MallaCritica
+============
+
+
+Conectividad:
+-------------
+
+	0) Conectador a redes abiertas (por señal)(ya lo hice :D)
+		- se conete a los routers de una lista (wep o wap)
+			planillas/wifi/$SSID/wireless
+		- rompa redes en su tiempo libre
+		- balanceo de carga
+	1) Transmisor a internet suficiente
+		- enviar track de sonidos uno tras otro
+		- enviar fotos en secuencia
+
+Servicios:
+----------
+
+	0) Transmisor con AP y/o Portal cautivo (solo para clientes)
+ 	1) Clon de un wifi (solo a redes abiertas)
+
+===========================
+
+Piezas:
+-------
+	- polipo + tinyproxy + ziproxy
+	- portal cautivo = dnsmasq + uhttpd + polipo (?)
+		echo "address=/#/gaspacho.local" >> /etc/dnsmasq.conf
+		nocatsplash mejor que dnsmasq
+		armador de temas en bootstrap + contenido adhoc 
+	- transmisor = icecast + ffmpeg2theora + oggfwd
+	- rompedor de claves = script con aircrack
+	- imitador de wifi = algo que lea MAC, frecuencia, SSID y los ponga en el router.
+	- chat con mosquitto
+	- lvpn / openvpn (riseup) / polipo
+
+----------------------------
+
+Mecanica:
+---------
+
+	Lista de redes (enlistada por potencia)
+		|
+	¿alguna conocida?
+		| \ SI: me conecto
+	hay redes abiertas
+		\ SI: me conecto
+	
+	paralelamente: busco redes wps, wep y wap enlistadas por potencia y trato de romperlas

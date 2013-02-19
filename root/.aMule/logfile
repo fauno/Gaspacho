@@ -1,0 +1,110 @@
+2013-02-18 01:11:55: Starting aMuled 2.2.6 using  v2.8.10
+2013-02-18 01:12:01: ERROR: WARNING Warning! You are running aMule as root.
+Doing so is not recommended for security reasons,
+and you are advised to run aMule as an normal
+user instead.
+2013-02-18 01:12:01: Creditfile loaded, 0 clients are known
+2013-02-18 01:12:01: Loading IP-filters 'ipfilter.dat' and 'ipfilter_static.dat'.
+2013-02-18 01:12:01: Loaded 0 IP-ranges from '/root/.aMule/ipfilter.dat'. 0 malformed lines were discarded.
+2013-02-18 01:12:01: Loaded 0 IP-ranges from '/root/.aMule/ipfilter_static.dat'. 0 malformed lines were discarded.
+2013-02-18 01:12:01: *** TCP socket (ECServer) listening on 0.0.0.0:4712
+2013-02-18 01:12:01: Created Server UDP-Socket at port 4665
+2013-02-18 01:12:01: Created Client UDP-Socket at port 4672
+2013-02-18 01:12:01: Loading server.met file: /root/.aMule/server.met
+2013-02-18 01:12:01: 0 servers in server.met found
+2013-02-18 01:12:01: No part files found
+2013-02-18 01:12:01: Found 0 known shared files
+2013-02-18 01:12:01: Connecting
+2013-02-18 01:12:01: No valid servers to which to connect found in server list
+2013-02-18 01:12:01: Error: Cannot get the official hostname (error 0: Success)
+2013-02-18 01:12:01: ThreadScheduler: Completed task 'AICH Syncronizing', 0 tasks remaining.
+2013-02-18 01:12:02: You are using an outdated version of aMule!
+2013-02-18 01:12:02: Your aMule version is 2.2.6 and the latest version is 2.3.1
+2013-02-18 01:12:02: The latest version can always be found at http://www.amule.org
+2013-02-18 01:12:20: New external connection accepted
+2013-02-18 01:12:20: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:12:20: Access granted.
+2013-02-18 01:12:45: New external connection accepted
+2013-02-18 01:12:48: New external connection accepted
+2013-02-18 01:13:05: New external connection accepted
+2013-02-18 01:13:18: New external connection accepted
+2013-02-18 01:13:19: New external connection accepted
+2013-02-18 01:13:50: New external connection accepted
+2013-02-18 01:13:51: New external connection accepted
+2013-02-18 01:13:53: New external connection accepted
+2013-02-18 01:14:09: New external connection accepted
+2013-02-18 01:14:10: New external connection accepted
+2013-02-18 01:14:17: New external connection accepted
+2013-02-18 01:14:18: New external connection accepted
+2013-02-18 01:14:25: External connection closed.
+2013-02-18 01:14:53: New external connection accepted
+2013-02-18 01:14:53: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:14:53: Access granted.
+2013-02-18 01:14:55: New external connection accepted
+2013-02-18 01:14:56: New external connection accepted
+2013-02-18 01:14:56: New external connection accepted
+2013-02-18 01:14:57: External connection closed.
+2013-02-18 01:15:02: New external connection accepted
+2013-02-18 01:15:02: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:15:02: Access granted.
+2013-02-18 01:15:03: New external connection accepted
+2013-02-18 01:15:04: New external connection accepted
+2013-02-18 01:15:04: New external connection accepted
+2013-02-18 01:15:05: New external connection accepted
+2013-02-18 01:15:13: External connection closed.
+2013-02-18 01:15:30: New external connection accepted
+2013-02-18 01:15:30: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:15:30: Access granted.
+2013-02-18 01:15:35: New external connection accepted
+2013-02-18 01:15:36: New external connection accepted
+2013-02-18 01:15:37: New external connection accepted
+2013-02-18 01:15:40: External connection closed.
+2013-02-18 01:16:08: New external connection accepted
+2013-02-18 01:16:08: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:16:08: Access granted.
+2013-02-18 01:16:09: New external connection accepted
+2013-02-18 01:16:10: New external connection accepted
+2013-02-18 01:16:10: New external connection accepted
+2013-02-18 01:16:12: External connection closed.
+2013-02-18 01:16:41: New external connection accepted
+2013-02-18 01:16:41: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:16:41: Access granted.
+2013-02-18 01:17:25: External connection closed.
+2013-02-18 01:17:26: New external connection accepted
+2013-02-18 01:17:26: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:17:26: Access granted.
+2013-02-18 01:18:09: External connection closed.
+2013-02-18 01:19:04: New external connection accepted
+2013-02-18 01:19:04: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:19:04: Access granted.
+2013-02-18 01:19:34: New external connection accepted
+2013-02-18 01:19:36: External connection closed.
+2013-02-18 01:19:43: New external connection accepted
+2013-02-18 01:19:43: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:19:43: Access granted.
+2013-02-18 01:19:45: New external connection accepted
+2013-02-18 01:21:58: External connection closed.
+2013-02-18 01:22:03: New external connection accepted
+2013-02-18 01:22:03: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:22:03: Access granted.
+2013-02-18 01:24:21: New external connection accepted
+2013-02-18 01:24:21: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:24:21: Access granted.
+2013-02-18 01:24:34: External connection closed.
+2013-02-18 01:24:44: New external connection accepted
+2013-02-18 01:24:44: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:24:44: Access granted.
+2013-02-18 01:25:38: External connection closed.
+2013-02-18 01:25:46: New external connection accepted
+2013-02-18 01:25:46: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:25:46: Access granted.
+2013-02-18 01:25:46: External connection closed.
+2013-02-18 01:26:20: New external connection accepted
+2013-02-18 01:26:20: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:26:20: Access granted.
+2013-02-18 01:27:18: External connection closed.
+2013-02-18 01:28:35: New external connection accepted
+2013-02-18 01:28:35: Connecting client: aMuleweb 2.2.6
+2013-02-18 01:28:35: Access granted.
+2013-02-18 01:31:01: External connection closed.
+2013-02-18 02:12:01: Kad started.

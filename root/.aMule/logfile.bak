@@ -1,0 +1,21 @@
+2013-02-18 01:11:27: Starting aMuled 2.2.6 using  v2.8.10
+2013-02-18 01:11:27: ERROR: WARNING Warning! You are running aMule as root.
+Doing so is not recommended for security reasons,
+and you are advised to run aMule as an normal
+user instead.
+2013-02-18 01:11:27: Creditfile loaded, 0 clients are known
+2013-02-18 01:11:28: Loading IP-filters 'ipfilter.dat' and 'ipfilter_static.dat'.
+2013-02-18 01:11:28: Loaded 0 IP-ranges from '/root/.aMule/ipfilter.dat'. 0 malformed lines were discarded.
+2013-02-18 01:11:28: Loaded 0 IP-ranges from '/root/.aMule/ipfilter_static.dat'. 0 malformed lines were discarded.
+2013-02-18 01:11:28: External connections disabled in config file
+2013-02-18 01:11:28: Created Server UDP-Socket at port 4665
+2013-02-18 01:11:28: Created Client UDP-Socket at port 4672
+2013-02-18 01:11:28: Loading server.met file: /root/.aMule/server.met
+2013-02-18 01:11:28: 0 servers in server.met found
+2013-02-18 01:11:28: No part files found
+2013-02-18 01:11:28: Found 0 known shared files
+2013-02-18 01:11:28: Connecting
+2013-02-18 01:11:28: No valid servers to which to connect found in server list
+2013-02-18 01:11:28: ERROR: aMule daemon cannot be used when external connections are disabled. To enable External Connections, use either a normal aMule, start amuled with the option --ec-config or set the key"AcceptExternalConnections" to 1 in the file ~/.aMule/amule.conf
+2013-02-18 01:11:28: ThreadScheduler: Completed task 'AICH Syncronizing', 0 tasks remaining.
+2013-02-18 01:11:28: Only 0 Kad contacts available, nodes.dat not written

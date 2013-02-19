@@ -1,0 +1,35 @@
+confdir .
+templdir proxy/templates
+
+logdir /dev
+logfile null
+
+activated-plugin websearch-api-compat
+
+user-db-file /var/lib/seeks/user.db
+
+#listen-address  0.0.0.0:8250
+
+toggle  1
+enable-remote-toggle  1
+enable-remote-http-toggle  1
+
+buffer-limit 512
+
+# me gustaria usar TOR pero va a explotar
+#forward-socks5   /               127.0.0.1:9050 .
+
+# mando los datos a tinyproxy
+forward-socks5   /               127.0.0.1:8123 .
+
+forwarded-connect-retries  0
+accept-intercepted-requests 1
+allow-cgi-request-crunching 0
+
+split-large-cgi-forms 0
+socket-timeout 600
+
+max-client-connections 32
+
+ct-connect-timeout 1
+ct-transfer-timeout 3

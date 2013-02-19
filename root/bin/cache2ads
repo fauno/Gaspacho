@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+#	Genera listas en json y text de los archivos multimedia en la cache
+#	Nota: hay que borrar ',]' al final del array
+#
+
+# verifica que el archivo sea lo suficientemente grande
+cd /root/Cache/ 
+
+ls | grep ads \
+| grep -v downloads \
+| while read SITIO ; do
+
+	cd $SITIO
+	echo $SITIO
+
+	# Lista de mimetypes
+	mimes=$(ls | while read ARCHIVO ; do 
+		nice -n 20 head -n 8 $ARCHIVO 2> /dev/null | grep "Content-Type:"
+	done | sort -u)
+
+	CANTIDAD="$(echo $mimes | wc -l)"
+
+	if [ "$(echo $mimes | grep "\(javascript\|gif\)")" ]; then
+		# deberia tener muchos o pocas
+		echo "$SITIO" | sed 's/^\(.*\)%.*$/\1/' >> /root/Filtros/BloqueadasGaspacho
+		SPAM=1
+		echo "spam"
+	fi
+	if [ "$CANTIDAD"  == "2" ]; then
+		# deberia verificarse mejor
+		echo "$SITIO" | sed 's/^\(.*\)%.*$/\1/' >> /root/Filtros/BloqueadasGaspacho
+		SPAM=1
+		echo "spam"
+	fi
+
+	cd ..
+
+	rm -r "$SITIO"
+
+done
+
+	echo "# esto se regenera en cada reboot o una vez al dia" > /etc/hosts
+	cat /root/Filtros/hosts >> /etc/hosts
+	echo "# SPAM" >> /etc/hosts
+	cat /root/Filtros/BloqueadasGaspacho /root/Filtros/Bloqueadas \
+| sort -u | grep -v "^$" | sed 's/^/0.0.0.0 /g'>> /etc/hosts
+
+exit
+
+	Si es publicidad:
+		- Contiene ads en la URL
+		- Si tiene solo gif, png y javascript
+		- Si tiene pocos 2 clases de mimetipe
+		- 
