@@ -1,0 +1,62 @@
+Gaspacho
+========
+router inteligente
+------------------
+
+Gestor de multimedia y descargas P2P, con soporte para la "libreVPN":http://librevpn.org.ar
+
+###Funcionamiento
+
+!http://ompldr.org/vZnIydw/nodomatic-conexion.png!
+
+###Hardware
+
+* "tl-wr701n":http://wiki.openwrt.org/toh/tp-link/tl-wr741nd
+* microSD + adaptador USB a microSD
+
+###Software
+
+Se instaló "openWRT":http://wiki.openwrt.org/toh/tp-link/tl-wr741nd sobre el router y luego se hizo un "extroot":http://wiki.openwrt.org/doc/howto/extroot y particiones en la microSD para iniciar el router con mucha más memoria.
+
+####Servicios
+
+* Transmisioón de audio/video - Icecast (_rechaza los videos, en audio ogg funciona perfectamente_)
+* Buscador - seeks (_sobre exige el router, funciona bien con json_)
+
+####Compartir archivos
+
+* FTP - vsftp (_en nobody comparte los archivos sin permiso de lectura_)
+* UPNP - ushare / minidlna (DNLA/UPNP) (_ambos parecen funcionar, pero no los pude comprobar_)
+* Samba (_funciona perfectamente_)
+* Webdav - lighttpd
+
+####P2P
+
+* Torrent - transmission (_funciona bien_)
+* ED2K - amule (_no funciona, fuera de mantenimiento_)
+
+####Comunicación
+
+* mosquitto (_funciona bien_)
+* IRC - ngircd (_funciona perfectamente_)
+* Cliente web - Candy
+
+####Proxy
+
+* Cache y Filtros de red - Polipo y tinyproxy (_funcionan bien_)
+* Anonimato - TOR
+
+####Redes
+
+* Soporte red Local :D
+** Avahi (_problemas con mdns_)
+* Soporte LibreVPN
+* Soporte Redes Libres
+
+####Nubes
+
+* buscador de torrent - IsoHunt
+* Buscadores y embed mejorados
+** Archive Internet
+** Vimeo
+** Youtube
