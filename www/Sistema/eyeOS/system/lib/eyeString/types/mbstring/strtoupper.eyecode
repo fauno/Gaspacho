@@ -1,8 +1,0 @@
-<?php
-/*
- * FUNCTIONS
- */
-function utf8_strtoupper($string) {
-	return mb_strtoupper($string, 'UTF-8');
-}
-?>

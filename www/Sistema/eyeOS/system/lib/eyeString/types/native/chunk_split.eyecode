@@ -1,8 +1,0 @@
-<?php
-/*
- * FUNCTIONS
- */
-function utf8_chunk_split($body, $chunklen = 76, $end = "\r\n") {
-	return implode($end, utf8_str_split($body, $chunklen));
-}
-?>

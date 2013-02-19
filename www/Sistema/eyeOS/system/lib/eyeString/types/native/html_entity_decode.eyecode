@@ -1,8 +1,0 @@
-<?php
-/*
- * FUNCTIONS
- */
-function utf8_html_entity_decode($string, $quote_style = ENT_COMPAT) {
-	return html_entity_decode($string, $quote_style, 'UTF-8');
-}
-?>

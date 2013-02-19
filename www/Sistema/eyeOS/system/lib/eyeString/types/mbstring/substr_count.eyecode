@@ -1,8 +1,0 @@
-<?php
-/*
- * FUNCTIONS
- */
-function utf8_substr_count($haystack, $needle, $offset = 0, $length = null) {
-	return mb_substr_count(utf8_substr($haystack, $offset, $length), $needle, 'UTF-8');
-}
-?>

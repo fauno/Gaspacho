@@ -1,8 +1,0 @@
-<?php
-/*
- * FUNCTIONS
- */
-function utf8_strtolower($str) {
-	return mb_strtolower($str, 'UTF-8');
-}
-?>
