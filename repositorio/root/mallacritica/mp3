@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+#	madplay luego va a ser otro reproductor
+#
+exit
+
+sleep 10
+
+while [ 1 ]; do
+	madplay */*/*mp3 -z -A -18
+	madplay */*mp3 -z -A -18
+done

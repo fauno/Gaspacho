@@ -1,0 +1,8 @@
+Hay que crear un archivo de configuracion para la mallacritica, ejemplo:
+
+config mallacritica
+	option modo 'cliente|ap'
+	option aircrack 'si|no'
+	option dns 'wget ...'
+
+- hacer que aircrack rompa wep por lo menos

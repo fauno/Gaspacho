@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+#	actualiza el dominio
+#
+
+wget --no-check-certificate -q https://freedns.afraid.org/dynamic/update.php?VVB2bW1xMzFVMVVBQUQ2TFRMNEFBQUIwOjg5Mzk5NDI= -O /dev/null #2> /dev/null

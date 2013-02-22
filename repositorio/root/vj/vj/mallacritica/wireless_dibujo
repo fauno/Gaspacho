@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+#
+
+
+while [ 1 ]; do
+
+DIB=$(sh wireless_lista  | sort -r | while read RED; do
+	SSID=$(echo $RED | sed 's/^.*|\(.*\)|.*$/\1/; s/  \+//g')
+	TIPO=$(echo $RED | sed 's/^.*|.*|\(.*\)$/\1/; s/  \+//g')
+	INTENSIDAD=$(echo $RED | sed 's/^\(.*\)|.*|.*$/\1/; s/ \+//g; s/-//g; s/\..*//g')
+	# menos el centro del circulo
+	INTENSIDAD=$((160-INTENSIDAD))
+        echo " circle 160,120 $INTENSIDAD,120 "
+done)
+
+	echo 'espere por favor...'
+	convert bg.png -fill red -stroke black -pointsize 10 -draw "stroke-dasharray 5 5 fill-opacity 0.1 ${DIB}" /tmp/draw_circle.png
+	mv /tmp/draw_circle.png /www/draw_circle.png
+
+	N=$((N+1))
+	echo "$N"
+done

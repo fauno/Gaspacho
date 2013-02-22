@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+#
+
+aireplay-ng -4 -c 6 mon0

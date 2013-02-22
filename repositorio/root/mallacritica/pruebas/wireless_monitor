@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+#	captura paquetes de redes wep
+#
+
+# quita el modo monitor si lo tiene
+airmon-ng stop mon0 2> /dev/null
+
+# genera el modo monitor
+airmon-ng start wlan0
+
+# descarga paquetes
+nice -n 20 airodump-ng mon0  --encrypt wep -w /tmp/capture --output-format ivs --update 0

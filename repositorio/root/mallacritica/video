@@ -1,0 +1,4 @@
+mjpg_streamer  -i "/usr/lib/input_uvc.so -f 1  -r 352x288 -y " &
+
+#-o "/usr/lib/output_file.so -c '/root/mallacritica/mjpg-temporal' " \
+#-o "output_http.so --port 8080"

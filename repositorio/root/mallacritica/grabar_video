@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+#	graba un video al presionar un boton
+#
+	
+PID="/tmp/grabar_video.pid"
+NOMBRE="/tmp/grabar_video.nombre"
+
+# LED
+ON="/sys/class/leds/tp-link:blue:system/delay_on"
+OFF="/sys/class/leds/tp-link:blue:system/delay_off"
+
+# directorio de multimedia
+DIR="/www/mediateca/videos"
+mkdir -p $DIR
+
+# verificacion
+
+if [ ! -f $PID ]; then
+	# poner indicador en el led
+
+
+	VIDEO="video_$(date +%F_%H.%M.%S).mjpg"
+	echo "/tmp/$VIDEO" > $NOMBRE
+
+	# led
+
+	echo "25" > $ON 
+	echo "25" > $OFF 
+
+	# descarga el video a mediateca
+	nice -n -19 wget http://0.0.0.0:8080/?action=stream -O /tmp/$VIDEO &
+	echo $! > $PID
+
+else
+
+	led_original
+	echo "0" > $ON 
+	echo "0" > $OFF 
+
+	# quitar el indicador en el led
+	mv $(cat $NOMBRE) $DIR &
+
+	# deja de descargar el video
+	kill $(cat $PID)
+	rm $PID
+
+fi

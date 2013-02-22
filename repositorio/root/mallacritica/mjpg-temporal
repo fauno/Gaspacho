@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# mueve el archivo para que siempre tengan el mismo nombre
+#	mirar: /etc/rc.local
+
+mv "$1" /tmp/transmision.jpg

