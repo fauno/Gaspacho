@@ -1,0 +1,12 @@
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+
+SPAM="$TOMATES/cache2ads"
+
+# generar los achivos para que aparescan en la mediateca
+*/10 * * * * /root/bin/descargas2json
+
+
+#@daily * * * *  $SPAM
+#@reboot * * * * $SPAM
+#@reboot * * * * echo "0" > /sys/class/leds/tp-link\:blue\:system/brightness
+#@shutdown * * * * echo "0" > /sys/class/leds/tp-link\:blue\:system/brightness
