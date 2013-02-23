@@ -82,7 +82,7 @@ iw wlan0 scan \
 	if [ "$KEY" ]; then
 		ENCRYPTION='wep'
 		if [ "$( echo $AP | grep PSK)" ]; then
-			ENCRYPTION='psk'			
+			ENCRYPTION='psk'
 			echo "codificación WAP"
 		else
 			echo "codificación EP"
@@ -96,7 +96,7 @@ iw wlan0 scan \
 		if [ ! "$( echo $AP | grep ' PSK')" ]; then
 
 			# Intenta conectar sin clave por las dudas
-			ENCRYPTION='none'		
+			ENCRYPTION='none'
 			cat "$SHARE/wireless-config" | grep -v key | sed "s/\$SSID/$SSID/g; s/\$ENCRYPTION/$ENCRYPTION/g" > /etc/config/wireless
 
 			reinciar
