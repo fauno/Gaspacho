@@ -4,128 +4,116 @@
 #	Ernesto Bazzano (c) Liberado bajo AGPL
 #
 
-PING="208.80.152.201"	#wikipedia
-ON="/sys/class/leds/tp-link:blue:system/delay_on"
-OFF="/sys/class/leds/tp-link:blue:system/delay_off"
-
-
-# if [ "$MALLACRITICA_MODO" == "AP" ]; then
-#	variable de entorno para verificar si tiene o no que funcionar este programa
-#	exit
-# fi
-
-#------------------------------------------------
-# funciones
+#--------------------- funciones --------------------------
 
 conectado () {
 	# verifica si esta conectado
 	if [ ! "$(ping -W 2 -c 1 $PING 2>&1| grep unreachable)" ]; then
-		# estoy conectado
 		echo "¡se conecto!"
-		if [ "$(cat $ON)" == "100" ] && [ "$(cat $OFF)" == "100" ]; then
-			echo "2000" > $ON
-			echo "1000" > $OFF
-		fi
+		led 2000 1000
 		exit
-	else 
-		# no estoy conectado
-		echo "100" > $ON
-		echo "100" > $OFF
+	else
 		echo "no pude conectar"
+		led 100 100
 	fi
 }
 
 reinciar () {
-	/etc/init.d/network restart 2> /dev/null
+	# reinicia el wifi
+	wifi down
+	wifi up
 	sleep 5
 }
 
+wifi_dispositivo () {
+		# carga la configuracion de la placa de wifi del equipo
+		rm -f /etc/config/wireless
+		wifi detect | grep -B 1000 "REMOVE"  > /etc/config/wireless
+}
 
 
 # ---- verifica si esta conectado ----
 
 conectado
 
-#------------------------------------------------
-# crea las carpetas y archivos por defecto
+#--------------------- variables ---------------------------
+
+BIN="/root/mallacritica/"
+PATH="$PATH:$BIN"
 
 SHARE="/usr/share/mallacritica"
 CLAVES="$SHARE/wireless-claves"
+
+PING="208.80.152.201"	#wikipedia
+
+#--------------------- archivos por defecto ---------------------------
+
+# lo crea si no existe
 mkdir -p "$SHARE" 2> /dev/null
-touch "$SHARE/claves"
+touch "$SHARE/wireless-claves" 2> /dev/null
 
 if [ ! -f "$SHARE/wireless-defecto" ]; then
 	echo "Creando la configuracion por defecto"
-	cp /etc/config/wireless "$SHARE/wireless-defecto"		# se hace una copia de seguridad si no exite
+	cp /etc/config/wireless "$SHARE/wireless-defecto"
 fi
 
 # --------- buscador de redes ----------
 
-# Lista de redes visibles
-iw wlan0 scan \
-| grep "\(SSID\|Authentication\|signal:\)" \
-| xargs \
-| sed 's/signal:\ /\n/g; s/*//g; s/dBm//g; s/SSID://g;' \
-| sort -u \
-| grep -v ^$ \
-| while read AP; do
+# Lista de redes visibles (esta lista es un quilombo)
+wireless_lista | while read AP; do
 
 	# SSID, hay que mejorarlo un poco
 	SSID=$(echo $AP | cut -d " " -f 2-4 | sed 's/\ Authentication.*$//g' )
+	WAP="$(echo $AP | grep PSK)"
 
 	# busca una clave de la lista
-	KEY="$(cat $CLAVES | grep -i "$SSID" | sed 's/^.*\t\(.*\)/\1/g')"
+	cat $CLAVES | grep -i "$SSID" | sed 's/^.*\t\(.*\)/\1/g' | while read KEY; do
 
-	echo "Conectando a '$SSID' clave '$KEY'"
+		echo "Conectando a '$SSID' clave '$KEY'"
 
-	# Si tiene clave
-	if [ "$KEY" ]; then
-		ENCRYPTION='wep'
-		if [ "$( echo $AP | grep PSK)" ]; then
-			ENCRYPTION='psk'
-			echo "codificación WAP"
+		# Si tiene la clave guardada
+
+
+		if [ "$KEY" ]; then
+			if [ "$WAP" ]; then
+				echo "codificación WAP"
+				ENCRYPTION='psk'
+			else
+				echo "codificación WEP"
+				ENCRYPTION='wep'
+			fi
 		else
-			echo "codificación EP"
-		fi
-
-		cat "$SHARE/wireless-config" | sed "s/\$SSID/$SSID/g; s/\$ENCRYPTION/$ENCRYPTION/g; s/\$KEY/$KEY/g" > /etc/config/wireless
-
-		reinciar
-		conectado
-	else
-		if [ ! "$( echo $AP | grep ' PSK')" ]; then
-
+			if [ "$WAP" ]; then
+				# si es WAP no se gasta ni en probar, si no tiene la clave
+				break
+			fi
 			# Intenta conectar sin clave por las dudas
 			ENCRYPTION='none'
-			cat "$SHARE/wireless-config" | grep -v key | sed "s/\$SSID/$SSID/g; s/\$ENCRYPTION/$ENCRYPTION/g" > /etc/config/wireless
-
-			reinciar
-			conectado
+			KEY=''
 		fi
-	fi
 
+		wifi_dispositivo
+		cat "$SHARE/wireless-config" | sed "s/\$SSID/$SSID/g; s/\$ENCRYPTION/$ENCRYPTION/g; s/\$KEY/$KEY/g" >> /etc/config/wireless
+		reinciar
+		conectado
+	done
 done
 
-#------------------------------------------------
-# Si no se conecta vuelve a la configuracion por defecto
-conectado
+#------------------------si no logra conectarse a anda------------------------
 
-cp "$SHARE/wireless-defecto" /etc/config/wireless
+conectado
+wifi_dispositivo
+# vuelve a la configuracion por defecto
+cp "$SHARE/wireless-defecto" >> /etc/config/wireless
 reinciar
 
 exit
 
 Por hacer:
 
-	- indicador para saber si estoy en modo cliente o punto de acceso
 	- hacer mas simple el programa
-	- verficiar si realmente es internet.
 	- verificar la calidad de servicio.
-	- programa en background para romper redes.
-	- desconectar a lo clientes para tener mas ancho de banda
+	- verficiar si realmente es internet.
+	- programa en background para romper redes
+	- desconectar a lo clientes para tener mas ancho de banda (?)
 	- hacer que tenga indicadores por luz
-
-
-
-MESSAGE="/sys/class/leds/tp-link\:blue\:system/message"
-LED="/sys/class/leds/tp-link:blue:system/brightness"
