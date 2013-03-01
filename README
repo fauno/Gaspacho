@@ -11,6 +11,10 @@ Un router con un preconfiguracion que permita agilizar la red (cachear, sacar pu
 
 Para instalar las fuentes tipograficas: `cd instalar; sh fuentes.sh`
 
+##Pagina Web
+
+La idea seria lograr que se paresca mucho a la interface final de Gaspacho y el manual de usuario
+
 ##Modelo simple (de esto no hay nada hecho)
 
 Compuesto por tan solo router, si se conecta un pendrive o disco externo se habiliten las funciones de **p2p** y cacheo. La idea es tener todo el software comprimido y que se descomprima y monte automáticamente al conectar un disco.
@@ -84,10 +88,11 @@ Se instaló **openWRT** sobre el router y luego se hizo un **extroot** y partici
 ##Como funciona
 
 * Un portal cautivo con clave que permite el acceso a internet, el resto solo tiene permiso de **comunidad**
-* El **puerto 80** tiene un proxy transparente con tinyproxy + polipo que redirecciona las URLs que pueden ser segura a **HTTPS**
+* El **puerto 80** tiene un proxy transparente con tinyproxy + polipo 
+* Polipo redirecciona las URLs que pueden ser segura a **HTTPS**
 * A la vez guarda todo el log en `/tmp/url.log` un crontab cada X cantidad de tiempo busca archivos multimedias y los guarda en otro log de archivos multimedia `/root/multimedia.log` como todo esta cacheado por polipo el usuario puede acceder a archivos almacenados en el router en cualquier momento, sin necesidad de internet.
-* todos los errores 404 son redireccionados al portal cautivo de Gaspacho
+* Todos los errores 404 son redireccionados al portal cautivo de Gaspacho
 * Polipo tambien redirecciona los archivo **.torrent** a transmission de modo tal que se ponen a descargar automaticamente.
-* transmission al descargar los archivos los almacena en `/root/descargas`
+* Transmission al descargar los archivos los almacena en `/root/descargas`
 * `/root/descargas` en accesible por todas las personas que estan conectadas al router a traves de **http**, **ftp**; **samba**, **DLNA** y **p2p**
 * El contenido estaria dividido en **hogar**, **comunidad** y **mundo** y depende como fuese marcado es el acceso que se les da a los usuarios que acceden a ese contenido.
