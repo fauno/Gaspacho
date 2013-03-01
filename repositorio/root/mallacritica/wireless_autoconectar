@@ -4,6 +4,17 @@
 #	Ernesto Bazzano (c) Liberado bajo AGPL
 #
 
+#--------------------- variables ---------------------------
+
+BIN="/root/mallacritica/"
+PATH="$PATH:$BIN"
+
+SHARE="/usr/share/mallacritica"
+CLAVES="$SHARE/wireless-claves"
+
+PING="208.80.152.201"	#wikipedia
+
+
 #--------------------- funciones --------------------------
 
 conectado () {
@@ -32,19 +43,9 @@ wifi_dispositivo () {
 }
 
 
-# ---- verifica si esta conectado ----
+#--------------------- verifica si esta conectado ---------------------------
 
 conectado
-
-#--------------------- variables ---------------------------
-
-BIN="/root/mallacritica/"
-PATH="$PATH:$BIN"
-
-SHARE="/usr/share/mallacritica"
-CLAVES="$SHARE/wireless-claves"
-
-PING="208.80.152.201"	#wikipedia
 
 #--------------------- archivos por defecto ---------------------------
 
@@ -59,21 +60,20 @@ fi
 
 # --------- buscador de redes ----------
 
-# Lista de redes visibles (esta lista es un quilombo)
+# Lista de redes visibles
 wireless_lista | while read AP; do
 
 	# SSID, hay que mejorarlo un poco
-	SSID=$(echo $AP | cut -d " " -f 2-4 | sed 's/\ Authentication.*$//g' )
-	WAP="$(echo $AP | grep PSK)"
+	SSID=$(echo $AP | cut -d " " -f 2-4 | sed 's/\ Authentication.*$//g')
+	WAP=$(echo $AP | grep PSK)
 
 	# busca una clave de la lista
-	cat $CLAVES | grep -i "$SSID" | sed 's/^.*\t\(.*\)/\1/g' | while read KEY; do
+
+	grep -i "^${$SSID:0:4}" $CLAVES | cut -d"\t" -f2 | while read KEY; do
 
 		echo "Conectando a '$SSID' clave '$KEY'"
 
 		# Si tiene la clave guardada
-
-
 		if [ "$KEY" ]; then
 			if [ "$WAP" ]; then
 				echo "codificación WAP"
@@ -82,6 +82,10 @@ wireless_lista | while read AP; do
 				echo "codificación WEP"
 				ENCRYPTION='wep'
 			fi
+			wifi_dispositivo
+			cat "$SHARE/wireless-config" | sed "s/\$SSID/$SSID/g; s/\$ENCRYPTION/$ENCRYPTION/g; s/\$KEY/$KEY/g" >> /etc/config/wireless
+			reinciar
+			conectado
 		else
 			if [ "$WAP" ]; then
 				# si es WAP no se gasta ni en probar, si no tiene la clave
@@ -89,13 +93,12 @@ wireless_lista | while read AP; do
 			fi
 			# Intenta conectar sin clave por las dudas
 			ENCRYPTION='none'
-			KEY=''
+			#KEY=''
+			wifi_dispositivo
+			cat "$SHARE/wireless-config" | sed "s/\$SSID/$SSID/g; s/\$ENCRYPTION/$ENCRYPTION/g;" >> /etc/config/wireless
+			reinciar
+			conectado
 		fi
-
-		wifi_dispositivo
-		cat "$SHARE/wireless-config" | sed "s/\$SSID/$SSID/g; s/\$ENCRYPTION/$ENCRYPTION/g; s/\$KEY/$KEY/g" >> /etc/config/wireless
-		reinciar
-		conectado
 	done
 done
 

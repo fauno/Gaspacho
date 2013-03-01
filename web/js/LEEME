@@ -1,0 +1,42 @@
+Buscadores
+==========
+
+Feed
+----
+
+Todos estos tienen un cgi que agrega un callback al feed
+
+	- isohunt
+	- archive.org
+	- opensearch y seeks (?)
+
+
+Lista de archivos
+=================
+
+Archivos en descarga
+--------------------
+	
+	find ./ <- hecho con un crontab cada x cantidad de minutos
+
+Archivos en cache
+-----------------
+	
+	lista creada por polipo + filtros + largo de la lista <- creada cada x cantidad de minutos
+
+
+Acciones
+========
+
+Enviar a archivos de descargas
+------------------------------
+
+	- wget del cache a descargas
+	- filtrar de la lista de archivos
+	- borrar del cache
+
+Alertas reemplazando google-analytic
+------------------------------------
+
+	- nicealert
+

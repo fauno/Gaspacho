@@ -1,0 +1,21 @@
+#descripcion #miniatura {
+	width: 400px;
+	height: 300px;
+}
+
+.categoria:not(:target) {
+	display: none	
+}
+
+.caterogia:target {
+	display: block;
+}
+
+iframe {
+	border: 0;
+	min-height: 320px;
+}
+
+*:target .categoria {
+	display: block;
+}
