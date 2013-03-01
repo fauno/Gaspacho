@@ -1,0 +1,21 @@
+#!/bin/sh
+# Actualizar la lista de dominios prohibidos de polipo
+# exportar H para cambiar la url de descarga y P para el archivo de polipo
+set -e
+
+hosts_url="${H:-http://someonewhocares.org/hosts/hosts}"
+forbidden_list="${P:-/etc/polipo/forbidden}"
+
+if [ ! -w "${forbidden_list}" ]; then
+    echo "No se puede modificar el archivo ${forbidden_list}"
+    exit 1
+fi
+
+# Descargar y mostrar solo los dominios que no son localhost
+wget -O - -q "${hosts_url}" | \
+    grep "^#\?127.0.0.1" | \
+    cut -d " " -f 2 | \
+    tr -d " " | tr -d "\t" | tr -d "#" | \
+    grep -v "^local" > "${forbidden_list}"
+
+echo "Actualizados $(wc -l "${forbidden_list}" | cut -d " " -f1) dominios"

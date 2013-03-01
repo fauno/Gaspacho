@@ -1,0 +1,28 @@
+# Proxy Abierto (IPv4 e IPv6)
+proxyAddress = "::0"
+
+# Sólo IPv4
+#proxyAddress = "0.0.0.0"
+
+# Proxy Cerrado
+#proxyAddress = "127.0.0.1"
+
+# Usar un tunel ssh
+# Ejemplo: ssh -D 8081 serverseguro
+#socksParentProxy = "localhost:8081"
+#socksProxyType = socks5
+
+# Cambiar a una partición mayor
+diskCacheRoot = "/home/cache"
+
+# Anonimizar un poco
+censoredHeaders = from, accept-language
+censorReferer = maybe
+
+# Utilizar el redirector 
+redirector = /etc/polipo/redirector
+
+# Usar el DNS del sistema
+# Mejor si se configura una cache de DNS local
+# Dejar en true si se usan direcciones .local
+dnsUseGethostbyname = true

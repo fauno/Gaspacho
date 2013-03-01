@@ -1,0 +1,26 @@
+#!/bin/sh
+# Actualizar la lista de dominios prohibidos de polipo
+# exportar H para cambiar la url de descarga y P para el archivo de polipo
+set -e
+
+hosts_url="${H:-http://someonewhocares.org/hosts/hosts}"
+forbidden_list="${P:-/etc/polipo/forbidden.tch}"
+
+if [ ! -f "${forbidden_list}" ]; then
+  tcamgr create "${forbidden_list}"
+fi
+
+if [ ! -w "${forbidden_list}" ]; then
+    echo "No se puede modificar el archivo ${forbidden_list}"
+    exit 1
+fi
+
+# Descargar y mostrar solo los dominios que no son localhost
+wget -O - -q "${hosts_url}" | \
+    grep "^#\?127.0.0.1" | \
+    cut -d " " -f 2 | \
+    tr -d " " | tr -d "\t" | tr -d "#" | \
+    grep -v "^local" | \
+    while read host; do
+      tcamgr put "${forbidden_list}" "${host}" "http://localhost/403.html"
+    done

@@ -1,0 +1,44 @@
+#!/bin/sh
+
+forbidden_list=/etc/polipo/forbidden.tch
+
+get() {
+  tcamgr get "${forbidden_list}" $1 2>/dev/null
+}
+
+get_domain() {
+  echo "$1" | cut -d'/' -f3
+}
+
+count_elements() {
+  echo "$1" | tr "." "\n" | wc -l
+}
+
+get_url() {
+  echo "$1" | cut -d'?' -f1
+}
+
+while read url; do
+  echo "$url" >> /tmp/url.log
+
+# Comprueba si la url completa está registrada
+  get "${url}" && continue
+
+# Redirecionar por dominio
+  domain="$(get_domain "$url")"
+  get "${domain}" && continue
+
+# Busca *.dominio.com
+  elements=$(count_elements "$domain")
+  if [ ${elements} -gt 1 ]; then
+    subdomain="$(echo "$domain" | cut -d'.' -f${elements}- | sed 's/^/*./')"
+    get "${subdomain}" && continue
+  fi
+
+# Redireccionar por url
+  url="$(get_url "$url")"
+  get "$url" && continue
+
+# Todo bien
+  echo
+done

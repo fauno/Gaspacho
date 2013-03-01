@@ -1,0 +1,33 @@
+#!/bin/sh
+
+forbidden_list=/etc/polipo/forbidden.tch
+forbidden_url="http://localhost/403.html"
+
+put() {
+  key="$1"; shift
+  tcamgr put "${forbidden_list}" "$key" "$@" 2>/dev/null
+}
+
+get_domain() {
+  echo "$1" | cut -d'/' -f3
+}
+
+get_url() {
+  echo "$1" | cut -d'?' -f1
+}
+
+case $1 in
+  -d) key="$(get_domain "$2")" ;;
+  -u) key="$(get_url "$2")" ;;
+   *) key="$1" ;;
+esac
+
+forbidden_url="${3:-$forbidden_url}"
+
+[ "$forbidden_url" = "nil" ] && unset forbidden_url
+
+echo "$key => $forbidden_url" 1>&2
+
+put "$key" "$forbidden_url"
+
+[ $? -ne 0 ] && { echo "No se pudo agregar la url."; exit 1; }
