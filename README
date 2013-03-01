@@ -9,6 +9,10 @@ Mini nodo para una red libre gestor de multimedia y descargas **P2P**, con sopor
 
 Un router con un preconfiguracion que permita agilizar la red (cachear, sacar publicidad, indexar), guardar tus vídeos y audios, te permita descargar contenido multimedia vía p2p y reproducirlo  online.
 
+##Arte y Manual
+
+Para instalar las fuentes tipograficas `cd instalar; sh fuentes.sh`
+
 ##Modelo simple
 
 Compuesto por tan solo router, si se conecta un pendrive o disco externo se habiliten las funciones de p2p y cacheo. La idea es tener todo el software comprimido y que se descomprima y monte automáticamente al conectar un disco.
@@ -73,8 +77,9 @@ Se instaló "openWRT":http://wiki.openwrt.org/toh/tp-link/tl-wr741nd sobre el ro
 
 ####Nubes
 
-* buscador de torrent - IsoHunt
+* Buscador de torrent - IsoHunt
 * Buscadores y embed mejorados
 ** Archive Internet
 ** Vimeo
 ** Youtube
+** VK
