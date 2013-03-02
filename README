@@ -1,19 +1,15 @@
 #Gaspacho
 ##router inteligente
 
-![Logo de Gaspacho](/Coop/Gaspacho.git/plain/manual/exportados/mascota_320.png)
+![](/Coop/Gaspacho.git/plain/manual/exportados/mascota_320.png)
 
 Mini nodo para una red libre gestor de multimedia y descargas **P2P**, con soporte para la [libreVPN](http://librevpn.org.ar).
 
 Un router con un preconfiguracion que permita agilizar la red (cachear, sacar publicidad, indexar), guardar tus vídeos y audios, te permita descargar contenido multimedia vía p2p y reproducirlo  online.
 
-##Arte y Manual
-
-Para instalar las fuentes tipografias: `cd instalar; sh fuentes.sh`
-
 ##Pagina Web
 
-La idea seria lograr que se paresca mucho a la interface final de Gaspacho y el manual de usuario
+La idea seria lograr que se parezca mucho a la interfase final de Gaspacho y el manual de usuario
 
 ##Modelo simple (de esto no hay nada hecho)
 
@@ -24,6 +20,14 @@ Compuesto por tan solo router, si se conecta un pendrive o disco externo se habi
 
 * tl-wr701n
 * microSD + adaptador USB a microSD
+
+##Arte
+
+* papercraft de la [mascota de gaspacho](/Coop/Gaspacho.git/plain/manual/papercraft.svg), imprimir en dos hojas de color y mezclar entre si.
+
+###Arte y Manual
+
+Para instalar las fuentes tipografías: `cd instalar; sh fuentes.sh`
 
 ##Software
 
@@ -39,7 +43,7 @@ Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki
 
 ####Servicios
 
-* Transmisioón de audio/video - Icecast (_rechaza los videos, en audio ogg funciona perfectamente_)
+* <s>Transmisión de audio/video - Icecast</s> (_rechaza los videos, en audio ogg funciona perfectamente_)
 * Buscador - seeks (_sobre exige el router, funciona bien con json_)
 
 ####Compartir archivos
@@ -58,8 +62,8 @@ Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki
 
 ####Comunicación
 
-* mosquitto (_funciona bien_)
 * IRC - ngircd (_funciona perfectamente_)
+* mosquitto (_funciona bien_)
 * Cliente web - Candy
 
 ####Proxy
@@ -93,5 +97,5 @@ Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki
 * Todos los errores 404 son redireccionados al portal cautivo de Gaspacho
 * Polipo tambien redirecciona los archivo **.torrent** a transmission de modo tal que se ponen a descargar automaticamente.
 * Transmission al descargar los archivos los almacena en `/root/descargas`
-* `/root/descargas` en accesible por todas las personas que estan conectadas al router a traves de **http**, **ftp**; **samba**, **DLNA** y **p2p**
-* El contenido estaria dividido en **hogar**, **comunidad** y **mundo** y depende como fuese marcado es el acceso que se les da a los usuarios que acceden a ese contenido.
+* `/root/descargas` en accesible por todas las personas que estan conectadas al router a través de **http**, **ftp**, **samba**, **DLNA** y **p2p**
+* El contenido estaría dividido en **hogar**, **comunidad** y **mundo** y depende como fuese marcado es el acceso que se les da a los usuarios que acceden a ese contenido.
