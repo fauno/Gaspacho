@@ -3,7 +3,7 @@
 
 ![Logo de Gaspacho](/Coop/Gaspacho.git/plain/manual/exportados/mascota_320.png)
 
-Mini nodo para una red libre gestor de multimedia y descargas **P2P**, con soporte para la "libreVPN":http://librevpn.org.ar.
+Mini nodo para una red libre gestor de multimedia y descargas **P2P**, con soporte para la [libreVPN](http://librevpn.org.ar).
 
 Un router con un preconfiguracion que permita agilizar la red (cachear, sacar publicidad, indexar), guardar tus vídeos y audios, te permita descargar contenido multimedia vía p2p y reproducirlo  online.
 
@@ -27,9 +27,8 @@ Compuesto por tan solo router, si se conecta un pendrive o disco externo se habi
 
 ##Software
 
-Se instaló **openWRT** sobre el router y luego se hizo un **extroot** y particiones en la **microSD** para iniciar el router con mucha más memoria.
+Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki.openwrt.org/doc/howto/extroot) y particiones en la **microSD** para iniciar el router con mucha más memoria.
 
-- http://wiki.openwrt.org/doc/howto/extroot
 
 ###Preconfiguración
 
