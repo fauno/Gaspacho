@@ -1,7 +1,7 @@
 #Gaspacho
 ##router inteligente
 
-!manual/mascota_320.png!
+!http://git.hackcoop.com.ar/Coop/Gaspacho.git/plain/manual/exportados/mascota_320.png!
 
 Mini nodo para una red libre gestor de multimedia y descargas **P2P**, con soporte para la "libreVPN":http://librevpn.org.ar.
 
@@ -40,6 +40,8 @@ Se instaló **openWRT** sobre el router y luego se hizo un **extroot** y partici
 
 ####Servicios
 
+!http://git.hackcoop.com.ar/Coop/Gaspacho.git/plain/desarollo_servicios.svg!
+
 * Transmisioón de audio/video - Icecast (_rechaza los videos, en audio ogg funciona perfectamente_)
 * Buscador - seeks (_sobre exige el router, funciona bien con json_)
 
@@ -51,6 +53,8 @@ Se instaló **openWRT** sobre el router y luego se hizo un **extroot** y partici
 * Webdav - lighttpd
 
 ####P2P
+
+!http://git.hackcoop.com.ar/Coop/Gaspacho.git/plain/desarollo_torrent.svg!
 
 * Torrent - transmission (_funciona bien_)
 * ED2K - amule (_no funciona, fuera de mantenimiento_)
@@ -64,6 +68,8 @@ Se instaló **openWRT** sobre el router y luego se hizo un **extroot** y partici
 * Cliente web - Candy
 
 ####Proxy
+
+!http://git.hackcoop.com.ar/Coop/Gaspacho.git/plain/desarollo_redireccion.svg!
 
 * Cache y Filtros de red - Polipo y tinyproxy (_funcionan bien_)
 ** Bloquear publicidad, privasida, cache, redireccionar errores y .torrent
