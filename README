@@ -88,6 +88,19 @@ Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki
  * Youtube
  * VK
 
+####Sugerir programa
+
+Sugerir programas por tipo de archivos, en lo posible tiene que correr en los 3 sistemas operativos.
+
+* Video y audio - VLC
+* Navegador - Mozilla Firefox
+* Evince - PDF
+* Calibre / FBreader - Epub
+* Chats - Pidgin
+* Office - LibreOffice
+* Sistema operativo - GNU/Linux (?)
+
+
 ##Como funciona
 
 * Un portal cautivo con clave que permite el acceso a internet, el resto solo tiene permiso de **comunidad**
