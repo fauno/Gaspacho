@@ -15,7 +15,6 @@ La idea seria lograr que se parezca mucho a la interfase final de Gaspacho y el 
 
 Compuesto por tan solo router, si se conecta un pendrive o disco externo se habiliten las funciones de **p2p** y cacheo. La idea es tener todo el software comprimido y que se descomprima y monte automáticamente al conectar un disco.
 
-
 ##Hardware
 
 * tl-wr701n
@@ -45,6 +44,14 @@ Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki
 
 * <s>Transmisión de audio/video - Icecast</s> (_rechaza los videos, en audio ogg funciona perfectamente_)
 * Buscador - seeks (_sobre exige el router, funciona bien con json_)
+
+####Ajax (parche para el navegador)
+
+* Inspecciona los enlaces 
+ * si son magnet:// o ed2k:// sugiere descargas
+ * si son irc:// sugiere correrlo con Pidgin
+ * si son audio y/o video sugiere instalar VLC
+ * si una paginas parece basura sugiere unirla a bloqueadas
 
 ####Compartir archivos
 
@@ -88,6 +95,7 @@ Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki
  * Youtube
  * VK
 
+
 ####Sugerir programa
 
 Sugerir programas por tipo de archivos, en lo posible tiene que correr en los 3 sistemas operativos.
@@ -112,3 +120,14 @@ Sugerir programas por tipo de archivos, en lo posible tiene que correr en los 3 
 * Transmission al descargar los archivos los almacena en `/root/descargas`
 * `/root/descargas` en accesible por todas las personas que estan conectadas al router a través de **http**, **ftp**, **samba**, **DLNA** y **p2p**
 * El contenido estaría dividido en **hogar**, **comunidad** y **mundo** y depende como fuese marcado es el acceso que se les da a los usuarios que acceden a ese contenido.
+
+###Primera versión
+
+* Potal cautivo (?)
+* Uhttpd para visaulizar descargas
+* Bloquear publiciadad (firewall + tinyproxy + polipo + tokycabrinet)
+* Seeks (?)
+* Busquedas en isohunt + Transmission + redireccionamiento de polipo
+* Sugerencia de archivos interesante de la navegacion (/tmp/url.log + script)
+* LibreVPN
+* Metodo de unión de nodos
