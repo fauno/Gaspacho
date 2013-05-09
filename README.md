@@ -1,7 +1,7 @@
 #Gaspacho
 ##router inteligente
 
-![](/Coop/Gaspacho.git/plain/manual/exportados/mascota_320.png)
+![Gaspacho](manual/exportados/mascota_320.png)
 
 Mini nodo para una red libre gestor de multimedia y descargas **P2P**, con soporte para la [libreVPN](http://librevpn.org.ar).
 Un router con un preconfiguracion que permita agilizar la red (cachear, sacar publicidad, indexar), guardar tus vídeos y audios, te permita descargar contenido multimedia vía p2p y reproducirlo  online.
@@ -45,11 +45,19 @@ Compuesto por tan solo router, si se conecta un pendrive o disco externo se habi
 
 ##Arte
 
-* papercraft de la [mascota de gaspacho](/Coop/Gaspacho.git/plain/manual/papercraft.svg), imprimir en dos hojas de color y mezclar entre si.
+* papercraft de la [mascota de gaspacho](manual/papercraft.svg), imprimir en dos hojas de color y mezclar entre si.
 
 ###Arte y Manual
 
 Para instalar las fuentes tipografías: `cd instalar; sh fuentes.sh`
+
+![contectar](manual/exportados/gaspacho_conectarlo.png)
+
+![contectar](manual/exportados/gaspacho_manual_basico.png)
+
+![contectar](manual/exportados/gaspacho_red.png)
+
+![contectar](manual/exportados/gaspacho_papercraft.png)
 
 ##Software
 
@@ -86,7 +94,6 @@ Sugerir programas por tipo de archivos, en lo posible tiene que correr en los 3 
 * Chats - Pidgin
 * Office - LibreOffice
 * Sistema operativo - GNU/Linux (?)
-
 
 ####Compartir archivos
 
