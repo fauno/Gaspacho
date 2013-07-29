@@ -29,6 +29,19 @@ Un router con un preconfiguracion que permita agilizar la red (cachear, sacar pu
 * Método de unión de nodos
 * Sugerir plugin y navegador Icecat, Iceweasel, Firefox
 
+###Manual
+
+Para instalar las fuentes tipografías: `cd instalar; sh fuentes.sh`
+
+![contectar](manual/exportados/gaspacho_conectarlo.png)
+
+![contectar](manual/exportados/gaspacho_manual_basico.png)
+
+![contectar](manual/exportados/gaspacho_red.png)
+
+![contectar](manual/exportados/gaspacho_papercraft.png)
+
+
 ##Pagina Web
 
 Lograr que se parezca al portal cautivo de Gaspacho y el manual de usuario
@@ -46,18 +59,6 @@ Compuesto por tan solo router, si se conecta un pendrive o disco externo se habi
 
 * papercraft de la [mascota de gaspacho](manual/papercraft.svg), imprimir en dos hojas de color y mezclar entre si.
 
-###Arte y Manual
-
-Para instalar las fuentes tipografías: `cd instalar; sh fuentes.sh`
-
-![contectar](manual/exportados/gaspacho_conectarlo.png)
-
-![contectar](manual/exportados/gaspacho_manual_basico.png)
-
-![contectar](manual/exportados/gaspacho_red.png)
-
-![contectar](manual/exportados/gaspacho_papercraft.png)
-
 ##Software
 
 Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki.openwrt.org/doc/howto/extroot) y particiones en la **microSD** para iniciar el router con mucha más memoria.
@@ -71,14 +72,14 @@ Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki
 
 ####Servicios
 
-* <s>Transmisión de audio/video - Icecast</s> _(rechaza los videos, en audio ogg funciona perfectamente)_
+* ~~Transmisión de audio/video - Icecast~~ _(rechaza los videos, en audio ogg funciona perfectamente)_
 * Buscador - seeks _(sobre exige el router, funciona bien con json)_
 
-####Ajax (parche para el navegador)
+####Ajax (parche para el navegador o plugin)
 
 * Inspecciona los enlaces 
- * si son @magnet://@ o @ed2k://@ sugiere descargas
- * si son @irc://@ sugiere correrlo con Pidgin
+ * si son `magnet://` o `ed2k://` sugiere descargas
+ * si son `irc://` sugiere correrlo con Pidgin
  * si son audio y/o video sugiere instalar VLC
  * si una paginas parece basura sugiere unirla a bloqueadas
 
@@ -136,3 +137,8 @@ Sugerir programas por tipo de archivos, en lo posible tiene que correr en los 3 
  * Youtube
  * VK
 
+## Quehaceres
+
+* Configurar polipo de modo transparente
+* Poner libreprojects en el portal cautivo
+* Leaflat como Mapa
