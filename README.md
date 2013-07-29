@@ -71,8 +71,8 @@ Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki
 
 ####Servicios
 
-* <s>Transmisión de audio/video - Icecast</s> (_rechaza los videos, en audio ogg funciona perfectamente_)
-* Buscador - seeks (_sobre exige el router, funciona bien con json_)
+* <s>Transmisión de audio/video - Icecast</s> _(rechaza los videos, en audio ogg funciona perfectamente)_
+* Buscador - seeks _(sobre exige el router, funciona bien con json)_
 
 ####Ajax (parche para el navegador)
 
@@ -96,34 +96,34 @@ Sugerir programas por tipo de archivos, en lo posible tiene que correr en los 3 
 
 ####Compartir archivos
 
-* FTP - vsftp (_en nobody comparte los archivos sin permiso de lectura_)
-* UPNP - ushare / minidlna (DNLA/UPNP) (_ambos parecen funcionar, pero no los pude comprobar_)
-* Samba (_funciona perfectamente_)
+* FTP - vsftp _(en nobody comparte los archivos sin permiso de lectura)_
+* UPNP - ushare / minidlna (DNLA/UPNP) _(ambos parecen funcionar, pero no los pude comprobar)_
+* Samba _(funciona perfectamente)_
 * Webdav - lighttpd
 
 ####P2P
 
-* Torrent - transmission (_funciona bien_)
-* ED2K - amule (_no funciona, fuera de mantenimiento_)
+* Torrent - transmission _(funciona bien)_
+* ED2K - amule _(no funciona, fuera de mantenimiento)_
 * Compartir todo en transmision (script mas o menos hecho)
 * Mostrar el contenido descargado en un gestor multimedia puede ser algo simple tipo indexado (lo tengo por la mitad)
 
 ####Comunicación
 
-* IRC - ngircd (_funciona perfectamente_)
-* mosquitto (_funciona bien_)
+* IRC - ngircd _(funciona perfectamente)_
+* mosquitto _(funciona bien)_
 * Cliente web - Candy
 
 ####Proxy
 
-* Cache y Filtros de red - Polipo y tinyproxy (_funcionan bien_)
+* Cache y Filtros de red - Polipo y tinyproxy _(funcionan bien)_
  * Bloquear publicidad, privasida, cache, redireccionar errores y .torrent
 * Anonimato - TOR (?)
 
 ####Redes
 
 * Soporte red Local :D
- * Avahi (_problemas con mdns_)
+ * Avahi _(problemas con mdns)_
 * Soporte LibreVPN
 * Soporte Redes Libres
 
