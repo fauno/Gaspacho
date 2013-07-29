@@ -77,8 +77,8 @@ Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki
 ####Ajax (parche para el navegador)
 
 * Inspecciona los enlaces 
- * si son magnet:// o ed2k:// sugiere descargas
- * si son irc:// sugiere correrlo con Pidgin
+ * si son @magnet://@ o @ed2k://@ sugiere descargas
+ * si son @irc://@ sugiere correrlo con Pidgin
  * si son audio y/o video sugiere instalar VLC
  * si una paginas parece basura sugiere unirla a bloqueadas
 
