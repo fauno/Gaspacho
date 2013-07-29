@@ -1,9 +1,8 @@
-#Gaspacho
-##router inteligente
+#Gaspacho - un router inteligente
 
 ![Gaspacho](manual/exportados/mascota_320.png)
 
-Mini nodo para una red libre gestor de multimedia y descargas **P2P**, con soporte para la [libreVPN](http://librevpn.org.ar).
+Mini nodo para una red libre, gestor de multimedia y descargas **P2P**, con soporte para la [libreVPN](http://librevpn.org.ar).
 Un router con un preconfiguracion que permita agilizar la red (cachear, sacar publicidad, indexar), guardar tus vídeos y audios, te permita descargar contenido multimedia vía p2p y reproducirlo  online.
 
 ##Como funciona
@@ -13,7 +12,7 @@ Un router con un preconfiguracion que permita agilizar la red (cachear, sacar pu
 * Polipo redirecciona las URLs que pueden ser segura a **HTTPS**
 * A la vez guarda todo el log en `/tmp/url.log` un crontab cada X cantidad de tiempo busca archivos multimedias y los guarda en otro log de archivos multimedia `/root/multimedia.log` como todo esta cacheado por polipo el usuario puede acceder a archivos almacenados en el router en cualquier momento, sin necesidad de internet.
 * Todos los errores 404 son redireccionados al portal cautivo de Gaspacho
-* Polipo tambien redirecciona los archivo **.torrent** a transmission de modo tal que se ponen a descargar automaticamente.
+* Polipo también redirecciona los archivo **.torrent** a transmission de modo tal que se ponen a descargar automáticamente.
 * Transmission al descargar los archivos los almacena en `/root/descargas`
 * `/root/descargas` en accesible por todas las personas que estan conectadas al router a través de **http**, **ftp**, **samba**, **DLNA** y **p2p**
 * El contenido estaría dividido en **hogar**, **comunidad** y **mundo** y depende como fuese marcado es el acceso que se les da a los usuarios que acceden a ese contenido.
@@ -23,18 +22,18 @@ Un router con un preconfiguracion que permita agilizar la red (cachear, sacar pu
 * Potal cautivo (?)
 * Uhttpd para visaulizar descargas
 * Bloquear publiciadad (firewall + tinyproxy + polipo + tokycabrinet)
-* Seeks (?)
+* Seeks (con el servidor web se vuelve  un poco inestable)
 * Busquedas en isohunt + Transmission + redireccionamiento de polipo
 * Sugerencia de archivos interesante de la navegacion (/tmp/url.log + script)
 * LibreVPN
-* Metodo de unión de nodos
-
+* Método de unión de nodos
+* Sugerir plugin y navegador Icecat, Iceweasel, Firefox
 
 ##Pagina Web
 
 Lograr que se parezca al portal cautivo de Gaspacho y el manual de usuario
 
-##Modelo simple (de esto no hay nada hecho)
+##Modelo simple
 
 Compuesto por tan solo router, si se conecta un pendrive o disco externo se habiliten las funciones de **p2p** y cacheo. La idea es tener todo el software comprimido y que se descomprima y monte automáticamente al conectar un disco.
 
@@ -136,3 +135,4 @@ Sugerir programas por tipo de archivos, en lo posible tiene que correr en los 3 
  * Vimeo
  * Youtube
  * VK
+
