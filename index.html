@@ -2,19 +2,43 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
   <title></title>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <link rel="stylesheet" href="css/markdown.css">
+  <link rel="stylesheet" href="css/orbit.css">
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/jquery.orbit.min.js" type="text/javascript"></script>
+  <style>
+	body {
+		background: #111;
+		margin: 0px 0px;
+		padding: 0px;
+		text-align:center; 
+	}
+	#featured {
+		margin: 0px auto;
+		padding: 0;
+		widht: 733px;
+	}
+  </style>
 </head>
 <body>
-<ul>
-<li><img src="manual/exportados/gaspacho_manual_basico.png" alt="contectar"></li>
-<li><img src="manual/exportados/gaspacho_conectarlo.png" alt="contectar"></li>
-<li><img src="manual/exportados/gaspacho_red.png" alt="contectar"></li>
-<li><img src="manual/exportados/gaspacho_papercraft.png" alt="contectar"></li>
-</ul>
+	<div id="featured">
+		<img src="manual/exportados/gaspacho_manual_basico.png" alt="Gaspacho navega sin publicidad"  />
+		<img src="manual/exportados/gaspacho_conectarlo.png" alt="Fácil de conectar"  />
+		<img src="manual/exportados/gaspacho_red.png" alt="Se comunican entre sí"  />
+		<img src="manual/exportados/gaspacho_papercraft.png" alt="Hace tu propia mascota"  data-caption="#htmlCaption" />
+	</div>
+	<span class="orbit-caption" id="htmlCaption">¡Tene tu propio Gaspacho!</span>
+<script type="text/javascript">
+      $(window).load(function() {
+         $('#featured').orbit({
+		captions: true,
+		captionAnimationSpeed: 800,
+	 	captionAnimation: 'fade'
+	});
+     });
+</script>
 </body>
 </html>
