@@ -33,15 +33,6 @@ Un router con un preconfiguracion que permita agilizar la red (cachear, sacar pu
 
 Para instalar las fuentes tipografías: `cd instalar; sh fuentes.sh`
 
-![contectar](manual/exportados/gaspacho_conectarlo.png)
-
-![contectar](manual/exportados/gaspacho_manual_basico.png)
-
-![contectar](manual/exportados/gaspacho_red.png)
-
-![contectar](manual/exportados/gaspacho_papercraft.png)
-
-
 ##Pagina Web
 
 Lograr que se parezca al portal cautivo de Gaspacho y el manual de usuario
