@@ -12,25 +12,32 @@
   <style>
 	body {
 		background: #111;
-		margin: 0px 0px;
-		padding: 0px;
-		text-align:center; 
+		margin:0px 0px; 
+		padding:0px;
+		text-align:center;
 	}
-	#featured {
-		margin: 0px auto;
-		padding: 0;
-		widht: 733px;
+	#centro {
+		position: absolute;
+		margin:0px auto;
+		text-align:left;
+		padding:0px;
+		padding-left: 50%;
+		margin-left: -366px;
 	}
   </style>
 </head>
 <body>
-	<div id="featured">
-		<img src="manual/exportados/gaspacho_manual_basico.png" alt="Gaspacho navega sin publicidad"  />
-		<img src="manual/exportados/gaspacho_conectarlo.png" alt="Fácil de conectar"  />
-		<img src="manual/exportados/gaspacho_red.png" alt="Se comunican entre sí"  />
-		<img src="manual/exportados/gaspacho_papercraft.png" alt="Hace tu propia mascota"  data-caption="#htmlCaption" />
+	
+	<div id="centro">
+		<div id="featured">
+			<img src="manual/exportados/gaspacho_manual_basico.png" alt="Gaspacho navega sin publicidad"  />
+			<img src="manual/exportados/gaspacho_conectarlo.png" alt="Fácil de conectar"  />
+			<img src="manual/exportados/gaspacho_red.png" alt="Se comunican entre sí"  />
+			<img src="manual/exportados/gaspacho_papercraft.png" alt="Hace tu propia mascota"  data-caption="#htmlCaption" />
+		</div>
+		<span class="orbit-caption" id="htmlCaption">¡Tene tu propio Gaspacho!</span>
 	</div>
-	<span class="orbit-caption" id="htmlCaption">¡Tene tu propio Gaspacho!</span>
+
 <script type="text/javascript">
       $(window).load(function() {
          $('#featured').orbit({
