@@ -91,7 +91,7 @@ La comunicación entre diferentes Gaspachos se realiza utilizando conexiones seg
 
 ====
 
-Fotos y imagenes.
+# Fotos y imagenes.
 
 ![Vista general](https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0049.JPG)
 
