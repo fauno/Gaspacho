@@ -105,17 +105,17 @@ Compuesto por tan solo router, si se conecta un pendrive o disco externo se habi
  * Uhttpd 
    * visaulizar descargas
    * presentación de contenido
-    * Seeks (con el servidor web se vuelve un poco inestable, se puede usar json + javascript)
-    * configuracion
+     * Seeks (con el servidor web se vuelve un poco inestable, se puede usar json + javascript)
+     * configuracion
    * Buscadores y embed mejorados
-    * Busquedas en isohunt + Transmission (redireccionamiento de polipo)
-    * Archive Internet
-    * Vimeo
-    * Youtube
-    * VK
-    * leaflatjs (mapa)
+     * Busquedas en isohunt + Transmission (redireccionamiento de polipo)
+     * Archive Internet
+     * Vimeo
+     * Youtube
+     * VK
+     * leaflatjs (mapa)
   * Sugerir plugin y navegador Icecat, Iceweasel, Firefox
-    * http://prism.hackcoop.com.ar/#browser-addons
+     * http://prism.hackcoop.com.ar/#browser-addons
   * Aplicaciones "offline" y almacenamiento tipo [unhosted](http://unhosted.org/)
  * portal cautivo
   * software apropiado
