@@ -2,7 +2,7 @@
 
 ## ¿Qué es?
 
-Gaspacho es un router inalámbrico inteligente, capaz de acelerar la navegación por internet desde cualquier dispositivo (computadoras, smart-phones, tablets, smart-tvs, etc). Asegura nuestra seguridad, bloquea publicidades y contenido no deseado y nos sugiere búsquedas de modo automático. A la vez, desde su página web, podemos realizar búsquedas tanto de direcciones, como de música, imágenes,y videos, y descargarlos fácilmente a nuestro dispositivo.
+Gaspacho es un router inalámbrico inteligente, capaz de acelerar la navegación por internet desde cualquier dispositivo _(computadoras, smart-phones, tablets, smart-tvs, etc)_. Asegura nuestra seguridad, bloquea publicidades y contenido no deseado y nos sugiere búsquedas de modo automático. A la vez, desde su página web, podemos realizar búsquedas tanto de direcciones, como de música, imágenes,y videos, y descargarlos fácilmente a nuestro dispositivo.
 
 Adicionalmente, los Gaspachos pueden conectarse entre sí formando una red segura y cooperar, compartiendo contenidos y comunicando a sus usuarios, sin importar dónde se encuentren.
 
@@ -19,8 +19,6 @@ Solo faltan mejoras para el usuario final, afinamiento del uso del procesador y 
 ### Estime el tiempo y la inversión necesarios para lograr su desarrollo completo
 
 Hacen faltan aproximadamente 6 meses de desarrollo, sobre todo hacer pruebas de campo con usuarios sin experiencia en redes informáticas, probandolo en condiciones reales.
-
-====
 
 # Novedad
 
@@ -50,21 +48,6 @@ Gaspacho utiliza software libre, software de almacenamiento y filtros de conteni
 
 Los desarrolladores de Gaspacho trabajamos contínuamente en el desarrollo software libre como parte fundamental de nuestra actividad laboral. Gaspacho constituye una implementación de funcionalidades que estamos habituados a utilizar sobre servidores de mayor costo y de difícil acceso y configuración. Nuestro proyecto contituye otra manera de implementar las mismas funcionalidades sobre un router inalámbrico de bajo costo, de forma tal que sea accesible a un mayor número de personas.
 
-====
-
-# Datos Públicos
-> Complete los siguientes campos con la información que desea publicar de su proyecto.
-
-// hay que completar (debe ser para la web)
-// sera nombre del proyecto, desarrolladores, etc?, tipo lo que vez en la pagina de github?
-	// nah!, no explicamos nada -- bazza
-
-## Texto para catálogo
-> Espacio limitado. Recomendamos utilizar frases cortas.
-
-// hay q completar (es lo que va a salir en el catalogo)
-
-
 ## ¿En qué consiste su proyecto? ¿Qué problema soluciona?
 
 Gaspacho es un router inalámbrico que mejora nuestra experiencia en internet acelerando la velocidad de navegación, protegiéndonos de aplicaciones maliciosas y haciendo de internet una experiencia más social y divertida.
@@ -88,8 +71,6 @@ Gaspacho, en su rol de almacenador local de contenido, guarda una copia de dicho
 Gaspacho ofrece una interfaz web con un listado de los contenidos disponibles localmente, que pueden reproducirse sin tener que ser descargados de internet. Además, Gaspacho trae incorporadas aplicaciones que normalmente requieren el uso de internet, como traductores, mapas, listas de estaciones de radio y video, entre otras.
 
 La comunicación entre diferentes Gaspachos se realiza utilizando conexiones seguras entre dispositivos, de establecimiento automático una vez definido el vínculo inicial.
-
-====
 
 # Fotos y imagenes.
 
