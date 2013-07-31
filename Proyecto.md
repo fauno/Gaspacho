@@ -19,6 +19,7 @@ Solo faltan mejoras para el usuario final, afinamiento del uso del procesador y 
 ### Estime el tiempo y la inversión necesarios para lograr su desarrollo completo
 
 Hacen faltan aproximadamente 6 meses de desarrollo, sobre todo hacer pruebas de campo con usuarios sin experiencia en redes informáticas, probandolo en condiciones reales.
+
 ====
 
 # Novedad
