@@ -102,18 +102,21 @@ La comunicación entre diferentes Gaspachos se realiza utilizando conexiones seg
 Compuesto por tan solo router, si se conecta un pendrive o disco externo se habiliten las funciones de **p2p** y cacheo. La idea es tener todo el software comprimido y que se descomprima y monte automáticamente al conectar un disco.
 
 * Interfaz web / Potal cautivo
- * Uhttpd para visaulizar descargas
-  * presentación de contenido (seeks, icecast, configuracion, etc)
-   * Seeks (con el servidor web se vuelve  un poco inestable)
-   * Busquedas en isohunt + Transmission + redireccionamiento de polipo
+ * Uhttpd 
+   * visaulizar descargas
+   * presentación de contenido
+    * Seeks (con el servidor web se vuelve un poco inestable, se puede usar json + javascript)
+    * configuracion
+   * Buscadores y embed mejorados
+    * Busquedas en isohunt + Transmission (redireccionamiento de polipo)
+    * Archive Internet
+    * Vimeo
+    * Youtube
+    * VK
+    * leaflatjs (mapa)
   * Sugerir plugin y navegador Icecat, Iceweasel, Firefox
+    * http://prism.hackcoop.com.ar/#browser-addons
   * Aplicaciones "offline" y almacenamiento tipo [unhosted](http://unhosted.org/)
-  * Buscadores y embed mejorados
-   * Archive Internet
-   * Vimeo
-   * Youtube
-   * VK
-   * leaflatjs (mapa)
  * portal cautivo
   * software apropiado
   * cookie para los MAC (cuando ponen la clave en el portal cautivo, tienen internet, si no solo muestra el contenido dentro del router)
@@ -152,6 +155,7 @@ Compuesto por tan solo router, si se conecta un pendrive o disco externo se habi
   * Office - LibreOffice
   * Sistema operativo - GNU/Linux (?)
 * Comunicación
+ * Avahi
  * IRC - ngircd _(funciona perfectamente)_
   * Cliente web - Chatzilla
  * mosquitto _(funciona bien)_
