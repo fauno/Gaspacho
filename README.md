@@ -85,7 +85,7 @@ La comunicación entre diferentes Gaspachos se realiza utilizando conexiones seg
 ![Empaque](https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0199.JPG)
 
 
-### Servicios
+## Conceptos basicos del desarrollo
 
 * Un portal cautivo con clave que permite el acceso a internet, el resto solo tiene permiso de **comunidad**
 * El **puerto 80** tiene un proxy transparente con tinyproxy + polipo 
@@ -97,113 +97,77 @@ La comunicación entre diferentes Gaspachos se realiza utilizando conexiones seg
 * `/root/descargas` en accesible por todas las personas que estan conectadas al router a través de **http**, **ftp**, **samba**, **DLNA** y **p2p**
 * El contenido estaría dividido en **hogar**, **comunidad** y **mundo** y depende como fuese marcado es el acceso que se les da a los usuarios que acceden a ese contenido.
 
-#### Ideas para la primera versión
-
-* Potal cautivo (?)
-* Uhttpd para visaulizar descargas
-* Bloquear publiciadad (firewall + tinyproxy + polipo + tokycabrinet)
-* Seeks (con el servidor web se vuelve  un poco inestable)
-* Busquedas en isohunt + Transmission + redireccionamiento de polipo
-* Sugerencia de archivos interesante de la navegacion (/tmp/url.log + script)
-* LibreVPN
-* Método de unión de nodos
-* Sugerir plugin y navegador Icecat, Iceweasel, Firefox
-
-###Manual
-
-Para instalar las fuentes tipografías: `cd instalar; sh fuentes.sh`
-
-##Pagina Web y extension para navegadores
-
-Lograr que se parezca la interfaz web de Gaspacho y el manual de usuario
-
-## Primer prototipo
+### Ideas para el prototipo (en desarrollo)
 
 Compuesto por tan solo router, si se conecta un pendrive o disco externo se habiliten las funciones de **p2p** y cacheo. La idea es tener todo el software comprimido y que se descomprima y monte automáticamente al conectar un disco.
 
-### Componentes
-
-* tl-wr701n
-* microSD + adaptador USB a microSD
-* papercraft de la [mascota de gaspacho](manual/papercraft.svg), imprimir en dos hojas de color y mezclar entre si.
-* Se instaló **openWRT** sobre el router y luego se hizo un [extroot](http://wiki.openwrt.org/doc/howto/extroot) y particiones en la **microSD** para iniciar el router con mucha más memoria.
-
-### Preconfiguración
-
-* portal cautivo
- * presentación de contenido (seeks, icecast, configuracion, etc)
- * cookie para los MAC (cuando ponen la clave en el portal cautivo, tienen internet, si no solo muestra el contenido dentro del router)
-* configuración de wifi (muy simple)
-
-#### Servicios
-
-* ~~Transmisión de audio/video - Icecast~~ _(rechaza los videos, en audio ogg funciona perfectamente)_
-* Buscador - seeks _(sobre exige el router, funciona bien con json)_
-
-##### Ajax (parche para el navegador o plugin)
-
-* Inspecciona los enlaces 
- * si son `magnet://` o `ed2k://` sugiere descargas
- * si son `irc://` sugiere correrlo con Pidgin
- * si son audio y/o video sugiere instalar VLC
- * si una paginas parece basura sugiere unirla a bloqueadas
-
-##### Sugerir programa
-
-Sugerir programas por tipo de archivos, en lo posible tiene que correr en los 3 sistemas operativos.
-
-* Video y audio - VLC
-* Navegador - Mozilla Firefox
-* Evince - PDF
-* Calibre / FBreader - Epub
-* Chats - Pidgin
-* Office - LibreOffice
-* Sistema operativo - GNU/Linux (?)
-
-#### Compartir archivos
-
-* FTP - vsftp _(en nobody comparte los archivos sin permiso de lectura)_
-* UPNP - ushare / minidlna (DNLA/UPNP) _(ambos parecen funcionar, pero no los pude comprobar)_
-* Samba _(funciona perfectamente)_
-* Webdav - lighttpd
-
-#### P2P
-
-* Torrent - transmission _(funciona bien)_
-* ED2K - amule _(no funciona, fuera de mantenimiento)_
-* Compartir todo en transmision (script mas o menos hecho)
-* Mostrar el contenido descargado en un gestor multimedia puede ser algo simple tipo indexado (lo tengo por la mitad)
-
-#### Comunicación
-
-* IRC - ngircd _(funciona perfectamente)_
-* mosquitto _(funciona bien)_
-* Cliente web - Candy
-
-#### Proxy
-
+* Interfaz web / Potal cautivo
+ * Uhttpd para visaulizar descargas
+  * presentación de contenido (seeks, icecast, configuracion, etc)
+   * Seeks (con el servidor web se vuelve  un poco inestable)
+   * Busquedas en isohunt + Transmission + redireccionamiento de polipo
+  * Sugerir plugin y navegador Icecat, Iceweasel, Firefox
+  * Aplicaciones "offline" y almacenamiento tipo [unhosted](http://unhosted.org/)
+  * Buscadores y embed mejorados
+   * Archive Internet
+   * Vimeo
+   * Youtube
+   * VK
+   * leaflatjs (mapa)
+ * portal cautivo
+  * software apropiado
+  * cookie para los MAC (cuando ponen la clave en el portal cautivo, tienen internet, si no solo muestra el contenido dentro del router)
+  * configuración de la red inalambrica
+* Bloquear publiciadad (firewall + tinyproxy + polipo + tokycabrinet)
+* Sugerencia de archivos interesante de la navegacion (/tmp/url.log + script)
+* [LibreVPN](http://librevpn.org.ar)
+ * Método de unión de nodos
+ * Avahi _(problemas con mdns)_
+* Anonimato - TOR (?)
 * Cache y Filtros de red - Polipo y tinyproxy _(funcionan bien)_
  * Bloquear publicidad, privasida, cache, redireccionar errores y .torrent
-* Anonimato - TOR (?)
+* Compartir archivos
+ * FTP - vsftp _(en nobody comparte los archivos sin permiso de lectura)_
+ * UPNP - ushare / minidlna (DNLA/UPNP) _(ambos parecen funcionar, pero no los pude comprobar)_
+ * Samba _(funciona perfectamente)_
+ * Webdav - ~~lighttpd~~
+ * P2P
+  * Torrent - transmission _(funciona bien)_
+  * ED2K - amule _(no funciona, fuera de mantenimiento)_
+  * Compartir todo en transmision (Kula ?)
+  * Mostrar el contenido descargado en un gestor multimedia puede ser algo simple tipo indexado (lo tengo por la mitad)
+* Ajax o plugin durante la navegación
+ * Inspecciona los enlaces 
+  * si son `magnet://` o `ed2k://` sugiere descargas
+  * si son `irc://` sugiere correrlo con Pidgin
+  * si son audio y/o video sugiere instalar VLC
+  * si una paginas parece basura sugiere unirla a bloqueadas
+ * Sugerir programa
+  > Sugerir programas por tipo de archivos, en lo posible tiene que correr en los 3 sistemas operativos.
+  * Video y audio - VLC
+  * Navegador - Mozilla Firefox
+  * Evince - PDF
+  * Calibre / FBreader - Epub
+  * Chats - Pidgin
+  * Office - LibreOffice
+  * Sistema operativo - GNU/Linux (?)
+* Comunicación
+ * IRC - ngircd _(funciona perfectamente)_
+  * Cliente web - Chatzilla
+ * mosquitto _(funciona bien)_
 
-#### Redes
+### Hardware
 
-* Soporte red Local :D
- * Avahi _(problemas con mdns)_
-* Soporte LibreVPN
-* Soporte Redes Libres
+* tl-wr701n
+ * Se instaló **openWRT** sobre el router 
+* microSD y su adaptador a USB
+ * [extroot](http://wiki.openwrt.org/doc/howto/extroot) y particiones en la **microSD** para iniciar el router con mucha más memoria.
+* papercraft de la [mascota de gaspacho](manual/papercraft.svg), imprimir en dos hojas de color y mezclar entre si.
 
-#### Nubes
+### Documentación
 
-* Buscador de torrent - IsoHunt
-* Buscadores y embed mejorados
- * Archive Internet
- * Vimeo
- * Youtube
- * VK
+Para instalar las fuentes tipografías: `cd instalar; sh fuentes.sh`
 
-## Quehaceres
+#### Paginas web promocional
 
-* Configurar polipo de modo transparente
-* Poner libreprojects en el portal cautivo
-* Leaflat como Mapa
+Lograr que se parezca la interfaz web de Gaspacho y el manual de usuario

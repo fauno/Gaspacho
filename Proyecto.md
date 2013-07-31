@@ -1,6 +1,4 @@
-#Datos Generales
-
-## ¿Qué es?
+## ¿Qué es Gaspacho?
 
 **Gaspacho** es un router inalámbrico inteligente, capaz de acelerar la navegación por internet desde cualquier dispositivo _(computadoras, smart-phones, tablets, smart-tvs, etc)_. Asegura nuestra seguridad, bloquea publicidades y contenido no deseado y nos sugiere búsquedas de modo automático. A la vez, desde su página web, podemos realizar búsquedas tanto de direcciones, como de música, imágenes,y videos, y descargarlos fácilmente a nuestro dispositivo.
 
