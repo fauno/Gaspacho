@@ -141,19 +141,18 @@ Compuesto por tan solo router, si se conecta un pendrive o disco externo se habi
   * Mostrar el contenido descargado en un gestor multimedia puede ser algo simple tipo indexado (lo tengo por la mitad)
 * Ajax o plugin durante la navegación
  * Inspecciona los enlaces 
-  * si son `magnet://` o `ed2k://` sugiere descargas
-  * si son `irc://` sugiere correrlo con Pidgin
-  * si son audio y/o video sugiere instalar VLC
-  * si una paginas parece basura sugiere unirla a bloqueadas
+   * si son `magnet://` o `ed2k://` sugiere descargas
+   * si son `irc://` sugiere correrlo con Pidgin
+   * si son audio y/o video sugiere instalar VLC
+   * si una paginas parece basura sugiere unirla a bloqueadas
  * Sugerir programa
-  > Sugerir programas por tipo de archivos, en lo posible tiene que correr en los 3 sistemas operativos.
-  * Video y audio - VLC
-  * Navegador - Mozilla Firefox
-  * Evince - PDF
-  * Calibre / FBreader - Epub
-  * Chats - Pidgin
-  * Office - LibreOffice
-  * Sistema operativo - GNU/Linux (?)
+   * Video y audio - VLC
+   * Navegador - Mozilla Firefox
+   * Evince - PDF
+   * Calibre / FBreader - Epub
+   * Chats - Pidgin
+   * Office - LibreOffice
+   * Sistema operativo - GNU/Linux (?)
 * Comunicación
  * Avahi
  * IRC - ngircd _(funciona perfectamente)_
