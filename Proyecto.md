@@ -93,11 +93,11 @@ La comunicación entre diferentes Gaspachos se realiza utilizando conexiones seg
 
 Fotos y imagenes.
 
-https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0049.JPG
+![Vista general](https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0049.JPG)
 
-https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0051.JPG
+![Conectado](https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0051.JPG)
 
-https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0052.JPG
+![Conectado a la computadora](https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0052.JPG)
 
-https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0199.JPG
+![Empaque](https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0199.JPG)
 
