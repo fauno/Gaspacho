@@ -4,3 +4,6 @@
 [submodule "libreprojects"]
 	path = libreprojects
 	url = https://github.com/b4zz4/libreprojects.git
+[submodule "polipo-config"]
+	path = polipo-config
+	url = https://github.com/fauno/polipo-config.git
