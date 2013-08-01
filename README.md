@@ -102,14 +102,14 @@ La comunicación entre diferentes Gaspachos se realiza utilizando conexiones seg
 Compuesto por tan solo router, si se conecta un pendrive o disco externo se habiliten las funciones de **p2p** y cacheo. La idea es tener todo el software comprimido y que se descomprima y monte automáticamente al conectar un disco.
 
 * Interfaz web / Potal cautivo
- * Uhttpd 
+ * Uhttpd √
    * visaulizar descargas
    * presentación de contenido
      * Seeks (con el servidor web se vuelve un poco inestable, se puede usar json + javascript)
      * configuracion
    * Buscadores y embed mejorados
-     * Busquedas en isohunt + Transmission (redireccionamiento de polipo)
-     * Archive Internet
+     * Busquedas en isohunt √ + Transmission (redireccionamiento de polipo)
+     * Archive Internet √
      * Vimeo
      * Youtube
      * VK
@@ -118,28 +118,29 @@ Compuesto por tan solo router, si se conecta un pendrive o disco externo se habi
      * http://prism.hackcoop.com.ar/#browser-addons
   * Aplicaciones "offline" y almacenamiento tipo [unhosted](http://unhosted.org/)
  * portal cautivo
-  * software apropiado
-  * cookie para los MAC (cuando ponen la clave en el portal cautivo, tienen internet, si no solo muestra el contenido dentro del router)
-  * configuración de la red inalambrica
-* Bloquear publiciadad (firewall + tinyproxy + polipo + tokycabrinet)
+   * software apropiado
+   * cookie para los MAC (cuando ponen la clave en el portal cautivo, tienen internet, si no solo muestra el contenido dentro del router)
+   * configuración de la red inalambrica
+* Bloquear publiciadad (firewall + tinyproxy + polipo √ + tokycabrinet)
 * Sugerencia de archivos interesante de la navegacion (/tmp/url.log + script)
 * [LibreVPN](http://librevpn.org.ar)
  * Método de unión de nodos
  * Avahi _(problemas con mdns)_
+ * Soporte de [owns](https://github.com/fauno/owns)
 * Anonimato - TOR (?)
-* Cache y Filtros de red - Polipo y tinyproxy _(funcionan bien)_
+* Cache y Filtros de red - Polipo √ y tinyproxy _(funcionan bien)_
  * Bloquear publicidad, privasida, cache, redireccionar errores y .torrent
-* Compartir archivos
+* Compartir archivos √
  * FTP - vsftp _(en nobody comparte los archivos sin permiso de lectura)_
- * UPNP - ushare / minidlna (DNLA/UPNP) _(ambos parecen funcionar, pero no los pude comprobar)_
- * Samba _(funciona perfectamente)_
- * Webdav - ~~lighttpd~~
+ * UPNP - ushare √ / minidlna √ (DNLA/UPNP) _(ambos parecen funcionar, pero no los pude comprobar)_
+ * Samba √ _(funciona perfectamente)_
+ * Webdav √ - (lighttpd, me parece un desperdicio usar otro servidor web)
  * P2P
-  * Torrent - transmission _(funciona bien)_
+  * Torrent - transmission √ _(funciona bien, a veces satura el procesador)_
   * ED2K - amule _(no funciona, fuera de mantenimiento)_
   * Compartir todo en transmision (Kula ?)
   * Mostrar el contenido descargado en un gestor multimedia puede ser algo simple tipo indexado (lo tengo por la mitad)
-* Ajax o plugin durante la navegación
+* Ajax o plugin durante la navegación (gm_proxy?)
  * Inspecciona los enlaces 
    * si son `magnet://` o `ed2k://` sugiere descargas
    * si son `irc://` sugiere correrlo con Pidgin
@@ -154,10 +155,11 @@ Compuesto por tan solo router, si se conecta un pendrive o disco externo se habi
    * Office - LibreOffice
    * Sistema operativo - GNU/Linux (?)
 * Comunicación
- * Avahi
- * IRC - ngircd _(funciona perfectamente)_
-  * Cliente web - Chatzilla
- * mosquitto _(funciona bien)_
+ * Avahi (no anda mdns)
+ * IRC - ngircd √ _(funciona perfectamente)_
+   * Cliente web - Chatzilla
+ * mosquitto √ _(funciona bien)_
+   * falta cliente web (sock)
 
 ### Hardware
 
