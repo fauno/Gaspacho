@@ -1,3 +1,6 @@
 [submodule "Leaflet"]
 	path = Leaflet
 	url = https://github.com/Leaflet/Leaflet
+[submodule "libreprojects"]
+	path = libreprojects
+	url = https://github.com/b4zz4/libreprojects.git
