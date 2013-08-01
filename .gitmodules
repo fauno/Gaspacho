@@ -1,9 +1,0 @@
-[submodule "libreprojects"]
-	path = modulos/libreprojects
-	url = https://github.com/b4zz4/libreprojects.git
-[submodule "polipo-config"]
-	path = modulos/polipo-config
-	url = https://github.com/fauno/polipo-config.git
-[submodule "Leaflet"]
-	path = modulos/Leaflet
-	url = https://github.com/Leaflet/Leaflet.git
