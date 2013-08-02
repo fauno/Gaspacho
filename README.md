@@ -77,28 +77,19 @@ Los routers que existen en el mercado se limitan, básicamente, a dar conectivid
 
 ## Conceptos basicos del desarrollo
 
-* Un portal cautivo con clave que permite el acceso a internet, el resto solo tiene permiso de **comunidad**
-* El **puerto 80** tiene un proxy transparente con tinyproxy + polipo 
-* Polipo redirecciona las URLs que pueden ser segura a **HTTPS**
-* A la vez guarda todo el log en `/tmp/url.log` un crontab cada X cantidad de tiempo busca archivos multimedias y los guarda en otro log de archivos multimedia `/root/multimedia.log` como todo esta cacheado por polipo el usuario puede acceder a archivos almacenados en el router en cualquier momento, sin necesidad de internet.
-* Todos los errores 404 son redireccionados al portal cautivo de Gaspacho
-* Polipo también redirecciona los archivo **.torrent** a transmission de modo tal que se ponen a descargar automáticamente.
-* Transmission al descargar los archivos los almacena en `/root/descargas`
-* `/root/descargas` en accesible por todas las personas que estan conectadas al router a través de **http**, **ftp**, **samba**, **DLNA** y **p2p**
-* El contenido estaría dividido en **hogar**, **comunidad** y **mundo** y depende como fuese marcado es el acceso que se les da a los usuarios que acceden a ese contenido.
-
-### Ideas para el prototipo (en desarrollo)
-
-Compuesto por tan solo router, si se conecta un pendrive o disco externo se habiliten las funciones de **p2p** y cacheo. La idea es tener todo el software comprimido y que se descomprima y monte automáticamente al conectar un disco.
 
 * Interfaz web / Potal cautivo
+ * El contenido estaría dividido en **hogar**, **comunidad** y **mundo** 
+   * **Hogar:** `/root/descargas` y `/root/cache/` es accesible por todas las personas que estan conectadas al router.
+   * **Comunidad:** chat y p2p
+   * **Mundo:** todo lo descargado con p2p
  * Uhttpd ✔
    * visaulizar descargas
    * presentación de contenido
      * Seeks (con el servidor web se vuelve un poco inestable, se puede usar json + javascript)
      * configuracion
    * Buscadores y embed mejorados
-     * Busquedas en isohunt ✔ + Transmission (redireccionamiento de polipo)
+     * Busquedas en isohunt ✔ 
      * Archive Internet ✔
      * Vimeo
      * Youtube
@@ -112,24 +103,34 @@ Compuesto por tan solo router, si se conecta un pendrive o disco externo se habi
    * cookie para los MAC (cuando ponen la clave en el portal cautivo, tienen internet, si no solo muestra el contenido dentro del router)
    * configuración de la red inalambrica
 * Bloquear publiciadad (firewall + tinyproxy + polipo ✔ + tokycabrinet)
-* Sugerencia de archivos interesante de la navegacion (/tmp/url.log + script)
+  * Guarda el log en `/tmp/url.log` un crontab cada X cantidad de tiempo busca archivos multimedias 
+  * Sugerencia de archivos interesante de la navegacion (/tmp/url.log + script) ✔
+  * redirecciona 
+    * las URLs que pueden ser segura a **HTTPS**
+    * los archivo **.torrent** a transmission de modo tal que se ponen a descargar automáticamente.
 * [LibreVPN](http://librevpn.org.ar)
  * Método de unión de nodos
  * Avahi _(problemas con mdns)_
  * Soporte de [owns](https://github.com/fauno/owns)
 * Anonimato - TOR (?)
-* Cache y Filtros de red - Polipo ✔ y tinyproxy _(funcionan bien)_
- * Bloquear publicidad, privasida, cache, redireccionar errores y .torrent
+* Cache y Filtros de red - Polipo ✔ y tinyproxy ✔
+> El **puerto 80** tiene un proxy transparente con tinyproxy + polipo 
+ * Bloquear publicidad y privasida
+ * Almacenamientos automático (cache)
+ * redireccionar errores al 404 de gaspacho
+ * `.torrent` redireccionados a Transmission
 * Compartir archivos ✔
+ * Mostrar el contenido descargado en un gestor multimedia puede ser algo simple tipo indexado (lo tengo por la mitad)
+   * API para borrar, guardar, compartir (por la mitad)
  * FTP - vsftp _(en nobody comparte los archivos sin permiso de lectura)_
- * UPNP - ushare ✔ / minidlna ✔ (DNLA/UPNP) _(ambos parecen funcionar, pero no los pude comprobar)_
+ * UPnP - ushare ✔ / minidlna ✔ (DNLA/UPNP) _(ambos parecen funcionar, pero no los pude comprobar)_
  * Samba ✔ _(funciona perfectamente)_
  * Webdav ✔ - (lighttpd, me parece un desperdicio usar otro servidor web)
  * P2P
   * Torrent - transmission ✔ _(funciona bien, a veces satura el procesador)_
+  > Transmission al descargar los archivos los almacena en `/root/descargas`
   * ED2K - amule _(no funciona, fuera de mantenimiento)_
   * Compartir todo en transmision (Kula ?)
-  * Mostrar el contenido descargado en un gestor multimedia puede ser algo simple tipo indexado (lo tengo por la mitad)
 * Ajax o plugin durante la navegación (gm_proxy?)
  * Inspecciona los enlaces 
    * si son `magnet://` o `ed2k://` sugiere descargas
