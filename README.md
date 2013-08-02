@@ -10,7 +10,12 @@ Adicionalmente, los Gaspachos pueden conectarse entre sí formando una red segur
 
 ## ¿Cómo funciona? 
 
-Al conectar nuestros dispositivos a **Gaspacho** y navegar por internet, éste almacena los contenidos relevantes como videos, audios y direcciones más visitadas y nos permite volver a verlas de modo rápido y fácil. Además, elimina publicidades y bloquea páginas maliciosas y programas espía. Todo esto mientras se asegura que toda la navegación se realice de la forma más segura disponible.
+Cuando accedemos a cualquier contenido en internet, ya sea una página o contenidos multimedia como videos o música, éstos se descargan desde el servidor a nuestra computadora pasando por el router.
+Gaspacho, en su rol de almacenador local de contenido, guarda una copia de dicho contenido en su memoria externa. De esta forma, cada vez que se desee acceder al mismo contenido, se descargará directamente de la memoria externa del dispositivo, acortando así, de manera notable, el tiempo de espera para la descarga y aumentando la velocidad de navegación.
+
+**Gaspacho** ofrece una interfaz web con un listado de los contenidos disponibles localmente, que pueden reproducirse sin tener que ser descargados de internet. Además, **Gaspacho** trae incorporadas aplicaciones que normalmente requieren el uso de internet, como traductores, mapas, listas de estaciones de radio y video, entre otras.
+
+La comunicación entre diferentes Gaspachos se realiza utilizando conexiones seguras entre dispositivos, de establecimiento automático una vez definido el vínculo inicial.
 
 ## Grado de desarrollo
 
@@ -23,8 +28,6 @@ Solo faltan mejoras para el usuario final, afinamiento del uso del procesador y 
 Hacen faltan aproximadamente 6 meses de desarrollo, sobre todo hacer pruebas de campo con usuarios sin experiencia en redes informáticas, probandolo en condiciones reales.
 
 # Novedad
-
-## ¿Cuál es el aspecto novedoso de este producto o proceso respecto de productos o procesos existentes?
 
 **Gaspacho** es novedoso porque provee almacenamiento local de contenidos (caching), una funcionalidad que hasta el día de hoy sólo está disponible para grandes y medianas empresas. Además brinda funcionalidades extra como un historial de contenido multimedia y protección contra webs maliciosas.
 
@@ -60,19 +63,7 @@ Los routers que existen en el mercado se limitan, básicamente, a dar conectivid
 
 ## ¿Cuál es la diferencia?
 
-
 **Gaspacho** hace un mejor uso de los recursos del router inalámbrico y lo convierte en una pequeña computadora capaz de mejorar diferentes aspectos de la navegación por internet (velocidad, seguridad, etc.) a la vez que facilita la formación de redes seguras entre dispositivos.
-
-
-## ¿Cómo funciona? 
-
-
-Cuando accedemos a cualquier contenido en internet, ya sea una página o contenidos multimedia como videos o música, éstos se descargan desde el servidor a nuestra computadora pasando por el router.
-Gaspacho, en su rol de almacenador local de contenido, guarda una copia de dicho contenido en su memoria externa. De esta forma, cada vez que se desee acceder al mismo contenido, se descargará directamente de la memoria externa del dispositivo, acortando así, de manera notable, el tiempo de espera para la descarga y aumentando la velocidad de navegación.
-
-**Gaspacho** ofrece una interfaz web con un listado de los contenidos disponibles localmente, que pueden reproducirse sin tener que ser descargados de internet. Además, **Gaspacho** trae incorporadas aplicaciones que normalmente requieren el uso de internet, como traductores, mapas, listas de estaciones de radio y video, entre otras.
-
-La comunicación entre diferentes Gaspachos se realiza utilizando conexiones seguras entre dispositivos, de establecimiento automático una vez definido el vínculo inicial.
 
 # Fotos y imagenes.
 
@@ -83,7 +74,6 @@ La comunicación entre diferentes Gaspachos se realiza utilizando conexiones seg
 ![Conectado a la computadora](https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0052.JPG)
 
 ![Empaque](https://raw.github.com/b4zz4/Gaspacho/master/fotos/PIC_0199.JPG)
-
 
 ## Conceptos basicos del desarrollo
 
