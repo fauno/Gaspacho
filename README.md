@@ -88,7 +88,7 @@ Los routers que existen en el mercado se limitan, básicamente, a dar conectivid
    * presentación de contenido
      * Seeks (con el servidor web se vuelve un poco inestable, se puede usar json + javascript)
      * configuracion
-   * Buscadores y embed mejorados
+   * Buscadores y embed mejorados 
      * Busquedas en isohunt ✔ 
      * Archive Internet ✔
      * Vimeo
@@ -113,8 +113,8 @@ Los routers que existen en el mercado se limitan, básicamente, a dar conectivid
  * Avahi _(problemas con mdns)_
  * Soporte de [owns](https://github.com/fauno/owns)
 * Anonimato - TOR (?)
-* Cache y Filtros de red - Polipo ✔ y tinyproxy ✔
-> El **puerto 80** tiene un proxy transparente con tinyproxy + polipo 
+* Cache y Filtros de red - Polipo ✔ y tinyproxy ✔\
+El **puerto 80** tiene un proxy transparente con tinyproxy + polipo
  * Bloquear publicidad y privasida
  * Almacenamientos automático (cache)
  * redireccionar errores al 404 de gaspacho
@@ -127,8 +127,8 @@ Los routers que existen en el mercado se limitan, básicamente, a dar conectivid
  * Samba ✔ _(funciona perfectamente)_
  * Webdav ✔ - (lighttpd, me parece un desperdicio usar otro servidor web)
  * P2P
-  * Torrent - transmission ✔ _(funciona bien, a veces satura el procesador)_
-  > Transmission al descargar los archivos los almacena en `/root/descargas`
+  * Torrent - transmission ✔ _(funciona bien, a veces satura el procesador)_\
+  Transmission al descargar los archivos los almacena en `/root/descargas`
   * ED2K - amule _(no funciona, fuera de mantenimiento)_
   * Compartir todo en transmision (Kula ?)
 * Ajax o plugin durante la navegación (gm_proxy?)
