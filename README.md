@@ -1,6 +1,6 @@
 ![Gaspacho](manual/exportados/tipografia.png)
 
-![Gaspacho](manual/exportados/mascota_320.png)
+![Mascota](manual/exportados/mascota_320.png)
 
 ## ¿Qué es Gaspacho?
 
@@ -80,77 +80,77 @@ Los routers que existen en el mercado se limitan, básicamente, a dar conectivid
 
 * Interfaz web / Potal cautivo
  * El contenido estaría dividido en **hogar**, **comunidad** y **mundo** 
-   * **Hogar:** `/root/descargas` y `/root/cache/` es accesible por todas las personas que estan conectadas al router.
-   * **Comunidad:** chat y p2p
-   * **Mundo:** todo lo descargado con p2p
+  * **Hogar:** `/root/descargas` y `/root/cache/` es accesible por todas las personas que estan conectadas al router.
+  * **Comunidad:** chat y p2p
+  * **Mundo:** todo lo descargado con p2p
  * Uhttpd ✔
-   * visaulizar descargas
-   * presentación de contenido
-     * Seeks (con el servidor web se vuelve un poco inestable, se puede usar json + javascript)
-     * configuracion
+  * visaulizar descargas
+  * presentación de contenido
+   * Seeks (con el servidor web se vuelve un poco inestable, se puede usar json + javascript)
+   * configuracion
    * Buscadores y embed mejorados 
-     * Busquedas en isohunt ✔ 
-     * Archive Internet ✔
-     * Vimeo
-     * Youtube
-     * VK
-     * leaflatjs (mapa)
-  * Sugerir plugin y navegador Icecat, Iceweasel, Firefox
-     * http://prism.hackcoop.com.ar/#browser-addons
+    * Busquedas en isohunt ✔ 
+    * Archive Internet ✔
+    * Vimeo
+    * Youtube
+    * VK
+    * leaflatjs (mapa)
+ * Sugerir plugin y navegador Icecat, Iceweasel, Firefox
+  * http://prism.hackcoop.com.ar/#browser-addons
   * Aplicaciones "offline" y almacenamiento tipo [unhosted](http://unhosted.org/)
  * portal cautivo
-   * software apropiado
-   * cookie para los MAC (cuando ponen la clave en el portal cautivo, tienen internet, si no solo muestra el contenido dentro del router)
-   * configuración de la red inalambrica
-* Bloquear publiciadad (firewall + tinyproxy + polipo ✔ + tokycabrinet)
+  * software apropiado
+  * cookie para los MAC (cuando ponen la clave en el portal cautivo, tienen internet, si no solo muestra el contenido dentro del router)
+  * configuración de la red inalambrica
+ * Bloquear publiciadad (firewall + tinyproxy + polipo ✔ + tokycabrinet)
   * Guarda el log en `/tmp/url.log` un crontab cada X cantidad de tiempo busca archivos multimedias 
   * Sugerencia de archivos interesante de la navegacion (/tmp/url.log + script) ✔
   * redirecciona 
-    * las URLs que pueden ser segura a **HTTPS**
-    * los archivo **.torrent** a transmission de modo tal que se ponen a descargar automáticamente.
-* [LibreVPN](http://librevpn.org.ar)
- * Método de unión de nodos
- * Avahi _(problemas con mdns)_
- * Soporte de [owns](https://github.com/fauno/owns)
-* Anonimato - TOR (?)
-* Cache y Filtros de red - Polipo ✔ y tinyproxy ✔\
-El **puerto 80** tiene un proxy transparente con tinyproxy + polipo
- * Bloquear publicidad y privasida
- * Almacenamientos automático (cache)
- * redireccionar errores al 404 de gaspacho
- * `.torrent` redireccionados a Transmission
-* Compartir archivos ✔
- * Mostrar el contenido descargado en un gestor multimedia puede ser algo simple tipo indexado (lo tengo por la mitad)
+   * las URLs que pueden ser segura a **HTTPS**
+   * los archivo **.torrent** a transmission de modo tal que se ponen a descargar automáticamente.
+ * [LibreVPN](http://librevpn.org.ar)
+  * Método de unión de nodos
+  * Avahi _(problemas con mdns)_
+  * Soporte de [owns](https://github.com/fauno/owns)
+ * Anonimato - TOR (?)
+ * Cache y Filtros de red - Polipo ✔ y tinyproxy ✔\
+ El **puerto 80** tiene un proxy transparente con tinyproxy + polipo
+  * Bloquear publicidad y privasida
+  * Almacenamientos automático (cache)
+  * redireccionar errores al 404 de gaspacho
+  * `.torrent` redireccionados a Transmission
+ * Compartir archivos ✔
+  * Mostrar el contenido descargado en un gestor multimedia puede ser algo simple tipo indexado (lo tengo por la mitad)
    * API para borrar, guardar, compartir (por la mitad)
- * FTP - vsftp _(en nobody comparte los archivos sin permiso de lectura)_
- * UPnP - ushare ✔ / minidlna ✔ (DNLA/UPNP) _(ambos parecen funcionar, pero no los pude comprobar)_
- * Samba ✔ _(funciona perfectamente)_
- * Webdav ✔ - (lighttpd, me parece un desperdicio usar otro servidor web)
- * P2P
-  * Torrent - transmission ✔ _(funciona bien, a veces satura el procesador)_\
-  Transmission al descargar los archivos los almacena en `/root/descargas`
-  * ED2K - amule _(no funciona, fuera de mantenimiento)_
-  * Compartir todo en transmision (Kula ?)
-* Ajax o plugin durante la navegación (gm_proxy?)
- * Inspecciona los enlaces 
+  * FTP - vsftp _(en nobody comparte los archivos sin permiso de lectura)_
+  * UPnP - ushare ✔ / minidlna ✔ (DNLA/UPNP) _(ambos parecen funcionar, pero no los pude comprobar)_
+  * Samba ✔ _(funciona perfectamente)_
+  * Webdav ✔ - (lighttpd, me parece un desperdicio usar otro servidor web)
+  * P2P
+   * Torrent - transmission ✔ _(funciona bien, a veces satura el procesador)_\
+   Transmission al descargar los archivos los almacena en `/root/descargas`
+   * ED2K - amule _(no funciona, fuera de mantenimiento)_
+   * Compartir todo en transmision (Kula ?)
+ * Ajax o plugin durante la navegación (gm_proxy?)
+  * Inspecciona los enlaces 
    * si son `magnet://` o `ed2k://` sugiere descargas
    * si son `irc://` sugiere correrlo con Pidgin
    * si son audio y/o video sugiere instalar VLC
    * si una paginas parece basura sugiere unirla a bloqueadas
  * Sugerir programa
-   * Video y audio - VLC
-   * Navegador - Mozilla Firefox
-   * Evince - PDF
-   * Calibre / FBreader - Epub
-   * Chats - Pidgin
-   * Office - LibreOffice
-   * Sistema operativo - GNU/Linux (?)
-* Comunicación
- * Avahi (no anda mdns)
- * IRC - ngircd ✔ _(funciona perfectamente)_
+  * Video y audio - VLC
+  * Navegador - Mozilla Firefox
+  * Evince - PDF
+  * Calibre / FBreader - Epub
+  * Chats - Pidgin
+  * Office - LibreOffice
+  * Sistema operativo - GNU/Linux (?)
+ * Comunicación
+  * Avahi (no anda mdns)
+  * IRC - ngircd ✔ _(funciona perfectamente)_
    * Cliente web - Chatzilla
  * mosquitto ✔ _(funciona bien)_
-   * falta cliente web (sock)
+  * falta cliente web (sock)
 
 ### Hardware
 
